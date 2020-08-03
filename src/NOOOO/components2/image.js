@@ -23,10 +23,17 @@ const Image = () => {
           }
         }
       }
+      logoImage: file(relativePath: { eq: "chuck-norris.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fluid={data.logoImage.childImageSharp.fluid} />
 }
 
 export default Image
