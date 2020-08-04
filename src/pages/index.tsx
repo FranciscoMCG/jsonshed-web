@@ -2,9 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 import colors from "../styles/colors"
-import Header from "../Layout/Header/Header"
+import { Header, Footer } from "../Layout/"
 import Main from "./Main"
-import Footer from "../Layout/Footer/Footer"
 import { SEO } from "../components/config"
 
 const AppContainer = styled.div`

@@ -1,53 +1,69 @@
-import React from "react"
-import styled from "styled-components"
+/** @jsx jsx */
+import React from 'react'
+import { Link } from 'gatsby'
+import { jsx } from 'theme-ui'
 
-import colors from "../../styles/colors"
-import { Logo } from "../../components/graphics"
-
-const HeaderContainer = styled.header`
-  display: flex;
-  overflow: hidden;
-  position: sticky;
-  top: 0;
-  margin: 0;
-  width: 100%;
-  height: 4rem;
-  align-items: center;
-  border-bottom: ${colors.black} 2px dotted;
-`
-
-const BackgroundContainer = styled.div`
-  line-height: 2rem;
-  padding: 0.7rem;
-`
-
-const Left = styled.div`
-  width: 30%;
-`
-
-const Center = styled.div`
-  position: relative;
-  width: 40%;
-  text-align: center;
-`
-
-const Right = styled.div`
-  width: 30%;
-`
-
-const Link = styled.h3`
-  font-size: 1.6rem;
-  margin: 0.7rem;
-`
+import { Logo } from '../../components/graphics'
 
 export default function Header() {
   return (
-    <HeaderContainer>
-      <Left>menu</Left>
-      <Center>
-        <Logo header>JSONSHED</Logo>
-      </Center>
-      <Right />
-    </HeaderContainer>
+    <header
+      sx={{
+        variant: 'layout.header',
+      }}
+    >
+      <button
+        title="Toggle Menu"
+        sx={{
+          appearance: 'none',
+          width: 32,
+          height: 32,
+          m: 0,
+          p: 1,
+          color: 'inherit',
+          bg: 'transparent',
+          border: 0,
+          ':focus': {
+            outline: '2px dotted',
+          },
+          ':hover': {
+            color: 'primary',
+          },
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="currentcolor"
+          viewBox="0 0 24 24"
+          sx={{
+            display: 'block',
+            margin: 0,
+          }}
+        >
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
+      </button>
+      <div
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Link
+          to="/"
+          sx={{
+            variant: 'styles.navlink',
+            textDecoration: 'none',
+            px: 3,
+            py: 1,
+          }}
+        >
+          <Logo />
+        </Link>
+      </div>
+    </header>
   )
 }

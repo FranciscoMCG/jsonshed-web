@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import { Logo } from "../../../../components/graphics"
 import { ContainerBackground } from "../../../../components/surfaces"
+import colors from "../../../../styles/colors"
 
 const SubTitle = styled.h3`
   margin-top: 0.4rem;
@@ -16,7 +17,7 @@ const LogoContainer = styled.div`
   transform: translate(-50%, -50%);
   background-color: #fff78c;
   width: 80%;
-  border: solid 1px black;
+  border: solid 1px ${colors.black};
   padding: 0.8rem;
   -webkit-box-shadow: 10px 10px 0px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 0px -5px rgba(0, 0, 0, 0.75);
