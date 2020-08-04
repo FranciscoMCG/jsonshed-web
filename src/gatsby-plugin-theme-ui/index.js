@@ -50,8 +50,14 @@ export default {
       borderBottom: 'black 2px dotted',
     },
     footer: {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
       color: 'text',
+      padding: '1rem',
+      width: '100%',
       backgroundColor: 'background',
+      borderTop: 'black 2px dotted',
     },
   },
   styles: {
