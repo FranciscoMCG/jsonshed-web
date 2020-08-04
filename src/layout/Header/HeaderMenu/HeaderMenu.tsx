@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import styled from 'styled-components'
 
 import { MenuIcon } from './MenuIcon'
-import { Card } from '../../../components/surfaces/'
+
 export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
@@ -47,7 +47,15 @@ export default function HeaderMenu() {
   return (
     <React.Fragment>
       <MenuIcon isOpen={isOpen} setIsOpen={setIsOpen} />
-      {isOpen && <nav sx={{ variant: 'cards.menu' }}></nav>}
+      {isOpen && (
+        <nav sx={{ variant: 'cards.nav' }}>
+          <a sx={{ variant: 'buttons.navItem' }}>about</a>
+          <a sx={{ variant: 'buttons.navItem' }}>usage</a>
+          <a sx={{ variant: 'buttons.navItem' }}>features</a>
+          <a sx={{ variant: 'buttons.navItem' }}>contribute</a>
+          <a sx={{ variant: 'buttons.navItem', borderBottom: 'none' }}>about</a>
+        </nav>
+      )}
     </React.Fragment>
     // <MenuButton aria-label="Toggle Menu" />
     // <button
