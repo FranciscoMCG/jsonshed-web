@@ -1,3 +1,3 @@
-import ContainerBackground from './ContainerBackground/ContainerBackground'
+import Card from './Card/Card'
 
-export { ContainerBackground }
+export { Card }

@@ -9,7 +9,14 @@ export default function Footer() {
         variant: 'layout.footer',
       }}
     >
-      <h3>© 2020 Francisco Gomes</h3>
+      <span
+        sx={{
+          fontSize: 1,
+          variant: 'text.body',
+        }}
+      >
+        © 2020 Francisco Gomes
+      </span>
     </footer>
   )
 }

@@ -1,13 +1,11 @@
 /** @jsx jsx */
-import React from 'react'
-import { jsx } from 'theme-ui'
+import React, { PropsWithChildren } from 'react'
+import { jsx, Text } from 'theme-ui'
 
-// const StyledLogo = styled.h1<Props>`
-//   font-family: 'Jacques Francois Shadow';
-//   font-size: ${props => props.header && '1.3rem'};
-//   font-size: ${props => props.main && '2.8rem'};
-// `
-
-export default function Logo() {
-  return <h1 sx={{ variant: 'text.logo' }}>JSONSHED</h1>
+export default function Logo(props: PropsWithChildren<{}>) {
+  return (
+    <Text {...props} sx={{ variant: 'text.logo' }}>
+      JSONSHED
+    </Text>
+  )
 }

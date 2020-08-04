@@ -1,22 +1,19 @@
-import React from "react"
-import styled from "styled-components"
+/** @jsx jsx */
+import React from 'react'
+import { jsx } from 'theme-ui'
 
-import LogoSection from "./sections/LogoSection/LogoSection"
-
-const MainContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  margin: 4rem 0rem;
-  width: 100%;
-  height: 200px;
-`
+import LogoSection from './sections/LogoSection/LogoSection'
 
 export default function Main() {
   return (
-    <MainContainer>
+    <main
+      sx={{
+        position: 'relative',
+        width: '100%',
+        flex: '1 1 auto',
+      }}
+    >
       <LogoSection />
-    </MainContainer>
+    </main>
   )
 }

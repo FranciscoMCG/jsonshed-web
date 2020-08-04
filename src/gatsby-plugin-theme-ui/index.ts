@@ -18,11 +18,12 @@ export default {
     heading: 1.125,
   },
   colors: {
-    text: '#000',
+    black: '#000',
+    white: '#fff',
+    text: '#212933',
     background: '#fff78c',
-    primary: '#000',
-    secondary: '#fff',
-    muted: '#f6f6f6',
+    primary: '#fff78c',
+    secondary: '#212933',
   },
   text: {
     logo: {
@@ -34,6 +35,13 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
+      color: 'text',
+    },
+    body: {
+      fontFamily: 'body',
+      lineHeight: 'body',
+      fontWeight: 'body',
+      color: 'text',
     },
   },
   layout: {
@@ -47,7 +55,7 @@ export default {
       alignItems: 'center',
       width: '100%',
       backgroundColor: 'background',
-      borderBottom: 'black 2px dotted',
+      borderBottom: 'secondary 2px dotted',
     },
     footer: {
       display: 'flex',
@@ -57,7 +65,52 @@ export default {
       padding: '1rem',
       width: '100%',
       backgroundColor: 'background',
-      borderTop: 'black 2px dotted',
+      borderTop: 'secondary 2px dotted',
+    },
+  },
+  buttons: {
+    menuBurguer: {
+      zIndex: 2,
+    },
+    menuClose: {
+      zIndex: 2,
+      color: 'primary',
+    },
+  },
+  cards: {
+    primary: {
+      backgroundColor: 'background',
+      padding: 3,
+      border: 'solid 1px',
+      boxShadow: '10px 10px 0px -5px rgba(33, 41, 51, 0.75)',
+    },
+    dotted: {
+      backgroundImage: `url(
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23000000' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E"
+      )`,
+      width: '100%',
+      boxShadow: 'none',
+      border: 'none',
+      px: 3,
+      py: 4,
+    },
+    menu: {
+      color: 'background',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      backgroundColor: 'secondary',
+      height: '100vh',
+      textAlign: 'left',
+      padding: '2rem',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      maxWidth: '100%',
+      width: '100%',
+      boxShadow: 'none',
+      transition: 'transform 0.3s ease-in-out',
+      zIndex: 1,
     },
   },
   styles: {
