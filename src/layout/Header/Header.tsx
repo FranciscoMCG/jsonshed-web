@@ -1,38 +1,41 @@
 /** @jsx jsx */
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 
+import useViewport from '../../hooks/useViewport'
 import { Logo } from '../../components/graphics'
-import { HeaderMenu } from './HeaderMenu'
+import { NavBar } from '../../components/navigation/Navbar'
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [isSideNav, setIsSideNav] = useState(false)
+
+  const { width, isDesktop, isMobile } = useViewport()
   return (
     <header
       sx={{
         variant: 'layout.header',
+        ...(isOpen && { position: 'relative' }),
       }}
     >
-      <HeaderMenu />
-      <div
+      <NavBar
+        isMobile={isMobile}
+        isSideNav={isSideNav}
+        setIsSideNav={setIsSideNav}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
+
+      <Link
+        to="/"
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          textDecoration: 'none',
+          py: 1,
         }}
       >
-        <Link
-          to="/"
-          sx={{
-            variant: 'styles.navlink',
-            textDecoration: 'none',
-            px: 3,
-            py: 1,
-          }}
-        >
-          <Logo />
-        </Link>
-      </div>
+        <Logo sx={{ variant: 'text.logoHeader' }} />
+      </Link>
     </header>
   )
 }

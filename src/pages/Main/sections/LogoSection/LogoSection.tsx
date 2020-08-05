@@ -9,7 +9,7 @@ export default function LogoSection() {
   return (
     <section
       sx={{
-        variant: 'cards.dotted',
+        variant: 'cards.stripes',
         maxWidth: '90%',
         position: 'absolute',
         top: '40%',
@@ -18,22 +18,24 @@ export default function LogoSection() {
         textAlign: 'center',
         display: 'flex',
         justifyContent: 'center',
-        zIndex: '-1',
       }}
     >
       <Card
         sx={{
+          position: 'relative',
           variant: 'cards.primary',
         }}
       >
         <Logo
           sx={{
-            fontSize: 5,
+            variant: 'text.logoMain',
+            fontSize: [5, 6, 7],
           }}
         />
         <h4
           sx={{
-            marginTop: '0.4rem',
+            fontSize: [1, 3, 4],
+            mt: [-1, -2, -3],
           }}
         >
           a fake api for testing and prototyping

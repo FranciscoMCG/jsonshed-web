@@ -6,7 +6,7 @@ interface Props {
   isOpen: boolean
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
-export default function MenuIcon({ isOpen, setIsOpen }: Props) {
+export default function NavIcons({ isOpen, setIsOpen }: Props) {
   return (
     <React.Fragment>
       {!isOpen ? (
