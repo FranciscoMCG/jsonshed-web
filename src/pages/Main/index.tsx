@@ -2,7 +2,8 @@
 import React from 'react'
 import { jsx } from 'theme-ui'
 
-import LogoSection from './sections/LogoSection/LogoSection'
+import UsageSection from './sections/UsageSection/UsageSection'
+import HomeSection from './sections/HomeSection/HomeSection'
 
 export default function Main() {
   return (
@@ -13,7 +14,8 @@ export default function Main() {
         flex: '1 1 auto',
       }}
     >
-      <LogoSection />
+      <HomeSection sx={{ bg: 'red' }} />
+      <UsageSection sx={{ bg: 'green' }} />
     </main>
   )
 }

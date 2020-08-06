@@ -5,7 +5,19 @@ import { jsx } from 'theme-ui'
 import { NavItems } from '../NavItems'
 import { NavIcons } from '../NavIcons'
 
-export default function NavBar({ isMobile, setIsSideNav, isOpen, setIsOpen }) {
+interface Props {
+  isMobile: boolean
+  setIsSideNav: React.Dispatch<React.SetStateAction<boolean>>
+  isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function NavBar({
+  isMobile,
+  setIsSideNav,
+  isOpen,
+  setIsOpen,
+}: Props) {
   useEffect(() => {
     if (isMobile) setIsSideNav(true)
   }, [isMobile])
@@ -26,7 +38,7 @@ export default function NavBar({ isMobile, setIsSideNav, isOpen, setIsOpen }) {
           left: 0,
         }}
       >
-        <NavItems isMobile={isMobile} isOpen={isOpen} />
+        <NavItems isMobile={isMobile} isOpen={isOpen} setIsOpen={setIsOpen} />
       </nav>
     </React.Fragment>
   )

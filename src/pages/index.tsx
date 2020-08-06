@@ -2,7 +2,7 @@
 import React from 'react'
 import { jsx } from 'theme-ui'
 
-import { Header, Footer } from '../Layout/'
+import { Header, Footer } from '../layout/'
 import Main from './Main'
 import { SEO } from '../components/config'
 

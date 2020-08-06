@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useState, useEffect } from 'react'
 import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
+import { AnchorLink as Link } from 'gatsby-plugin-anchor-links'
 
 import useViewport from '../../hooks/useViewport'
 import { Logo } from '../../components/graphics'
@@ -16,19 +16,17 @@ export default function Header() {
     <header
       sx={{
         variant: 'layout.header',
-        ...(isOpen && { position: 'relative' }),
       }}
     >
       <NavBar
         isMobile={isMobile}
-        isSideNav={isSideNav}
         setIsSideNav={setIsSideNav}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
       />
 
       <Link
-        to="/"
+        to="/#home"
         sx={{
           textDecoration: 'none',
           py: 1,

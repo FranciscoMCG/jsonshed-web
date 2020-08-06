@@ -8,8 +8,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-styled-components`,
+    'gatsby-plugin-anchor-links',
     `gatsby-plugin-react-helmet`,
-    "gatsby-plugin-theme-ui",
+    'gatsby-plugin-theme-ui',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,11 +25,11 @@ module.exports = {
       options: {
         fonts: [
           `Indie Flower`,
-          "Fredericka the Great",
-          "Jacques Francois Shadow",
-          "Comfortaa",
+          'Fredericka the Great',
+          'Jacques Francois Shadow',
+          'Comfortaa',
         ],
-        display: "swap",
+        display: 'swap',
       },
     },
   ],

@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
+import { AnchorLink as Link } from 'gatsby-plugin-anchor-links'
 
 interface Props {
   isMobile: boolean
   isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 interface NavItem {
@@ -20,21 +21,35 @@ const navItems: NavItem[] = [
   { title: 'about', to: '#about' },
 ]
 
-export default function NavItems({ isMobile, isOpen }: Props) {
+export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
   return (
     <React.Fragment>
       {navItems.map((item: NavItem, i) => (
         <Link
           key={i}
-          to={item.to}
+          to={`/${item.to}`}
           sx={{
+            variant: 'none',
             ...(isMobile && isOpen && { variant: 'styles.sideNavItem' }),
             ...(!isMobile && {
               variant: 'styles.topNavItem',
             }),
           }}
         >
-          {item.title}
+          {' '}
+          <button
+            sx={{
+              padding: 0,
+              border: 'none',
+              outline: 'none',
+              font: 'inherit',
+              color: 'inherit',
+              background: 'none',
+            }}
+            onClick={() => setIsOpen(false)}
+          >
+            {item.title}
+          </button>
         </Link>
       ))}
     </React.Fragment>
