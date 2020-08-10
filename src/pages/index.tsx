@@ -3,7 +3,7 @@ import React from 'react'
 import { jsx } from 'theme-ui'
 
 import { Header, Footer } from '../layout/'
-import Main from './Main'
+import Main from './Main/Main'
 import { SEO } from '../components/config'
 
 export default function App() {

@@ -1,13 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `jsonshed web`,
-    description: `Fake api for testing and prototyping
-
-    `,
+    siteUrl: `www.jsonshed.com`,
+    description: `Fake api for testing and prototyping`,
     author: `@franciscomcg`,
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
     'gatsby-plugin-anchor-links',
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-theme-ui',
@@ -15,7 +13,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -23,12 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Indie Flower`,
-          'Fredericka the Great',
-          'Jacques Francois Shadow',
-          'Comfortaa',
-        ],
+        fonts: ['Comfortaa'],
         display: 'swap',
       },
     },

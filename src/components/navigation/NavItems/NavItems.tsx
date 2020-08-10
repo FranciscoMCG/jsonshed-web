@@ -15,16 +15,27 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
+  { title: 'about', to: '#about' },
   { title: 'usage', to: '#usage' },
   { title: 'features', to: '#features' },
   { title: 'contribute', to: '#contribute' },
-  { title: 'about', to: '#about' },
 ]
 
+const mobileNavItems: NavItem[] = [{ title: 'home', to: '#home' }, ...navItems]
+
+const buttonStyle = {
+  padding: 0,
+  border: 'none',
+  outline: 'none',
+  font: 'inherit',
+  color: 'inherit',
+  background: 'none',
+}
 export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
+  const items = isMobile ? mobileNavItems : navItems
   return (
     <React.Fragment>
-      {navItems.map((item: NavItem, i) => (
+      {items.map((item: NavItem, i) => (
         <Link
           key={i}
           to={`/${item.to}`}
@@ -37,21 +48,25 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
           }}
         >
           {' '}
-          <button
-            sx={{
-              padding: 0,
-              border: 'none',
-              outline: 'none',
-              font: 'inherit',
-              color: 'inherit',
-              background: 'none',
-            }}
-            onClick={() => setIsOpen(false)}
-          >
+          <button sx={buttonStyle} onClick={() => setIsOpen(false)}>
             {item.title}
           </button>
         </Link>
       ))}
+      <a
+        href="https://github.com/FranciscoMCG/jsonshed"
+        target="_blank"
+        sx={{
+          variant: 'none',
+
+          ...(isMobile && isOpen && { variant: 'styles.sideNavItem' }),
+          ...(!isMobile && {
+            variant: 'styles.topNavItem',
+          }),
+        }}
+      >
+        github
+      </a>
     </React.Fragment>
   )
 }

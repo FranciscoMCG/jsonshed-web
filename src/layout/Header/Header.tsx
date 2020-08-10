@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { jsx } from 'theme-ui'
 import { AnchorLink as Link } from 'gatsby-plugin-anchor-links'
 
@@ -11,7 +11,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [isSideNav, setIsSideNav] = useState(false)
 
-  const { width, isDesktop, isMobile } = useViewport()
+  const { isMobile } = useViewport()
   return (
     <header
       sx={{

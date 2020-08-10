@@ -4,6 +4,9 @@ import { jsx } from 'theme-ui'
 
 import UsageSection from './sections/UsageSection/UsageSection'
 import HomeSection from './sections/HomeSection/HomeSection'
+import AboutSection from './sections/AboutSection/AboutSection'
+import FeaturesSection from './sections/FeaturesSection/FeaturesSection'
+import ContributeSection from './sections/ContributeSection/ContributeSection'
 
 export default function Main() {
   return (
@@ -14,8 +17,11 @@ export default function Main() {
         flex: '1 1 auto',
       }}
     >
-      <HomeSection sx={{ bg: 'red' }} />
-      <UsageSection sx={{ bg: 'green' }} />
+      <HomeSection />
+      <AboutSection />
+      <UsageSection />
+      <FeaturesSection />
+      <ContributeSection />
     </main>
   )
 }
