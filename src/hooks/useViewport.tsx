@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 
+export const isBrowser = () => typeof window !== 'undefined'
+
 export default function useViewport() {
-  const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState(isBrowser() && window.innerWidth)
 
   const mobileBreakpoint = 640
   const desktopBreakpoint = 832
