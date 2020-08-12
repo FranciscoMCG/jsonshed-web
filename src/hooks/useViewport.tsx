@@ -12,8 +12,8 @@ export default function useViewport() {
   const isDesktop = width > desktopBreakpoint
 
   useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
+    const handleWindowResize = () => setWidth(isBrowser() && window.innerWidth)
+    isBrowser() && window.addEventListener('resize', handleWindowResize)
     return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
