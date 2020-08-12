@@ -40,20 +40,13 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
             }),
           }}
         >
-          {' '}
-          <button
-            sx={{ variant: 'buttons.styleNone' }}
-            onClick={() => setIsOpen(false)}
-          >
-            {item.title}
-          </button>
+          {item.title}
         </Link>
       ))}
       <a
         href="https://github.com/FranciscoMCG/jsonshed"
         target="_blank"
         rel="noreferrer"
-        onClick={() => setIsOpen(false)}
         sx={{
           variant: 'none',
 
@@ -68,3 +61,7 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
     </React.Fragment>
   )
 }
+
+// ;<button sx={{ variant: 'buttons.styleNone' }} onClick={() => setIsOpen(false)}>
+//   {item.title}
+// </button>
