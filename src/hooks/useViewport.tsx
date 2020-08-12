@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 export default function useViewport() {
   const [width, setWidth] = useState(window.innerWidth)
 
-  const mobileBreakpoint = 600
-  const desktopBreakpoint = 768
+  const mobileBreakpoint = 640
+  const desktopBreakpoint = 832
 
   const isMobile = width < mobileBreakpoint
   const isDesktop = width > desktopBreakpoint

@@ -20,16 +20,16 @@ export default {
   colors: {
     black: '#000',
     white: '#fff',
-    text: '#000',
-    background: '#fff9a6',
+    text: 'white',
+    background: '#707793',
     // primary - brand color for links, buttons, etc. light
-    primary: '#ffffd8',
+    primary: '#43455c',
     // secondary - brand color for alternative styling. dark
-    secondary: '#cbc676',
+    secondary: '#2e3047',
     // highlight - A background color for highlighting text
-    highlight: '#',
+    highlight: '#3bba9c',
     // muted - A faint color for backgrounds, borders, and accents that do not require high contrast with the background color
-    muted: '#f6f6f6',
+    muted: '##adedd4',
   },
   text: {
     logoHeader: {
@@ -66,10 +66,9 @@ export default {
       height: '10vh',
       justifyContent: 'space-between',
       p: '0.5rem 1rem',
-      color: 'text',
       alignItems: 'center',
       width: '100%',
-      bg: 'secondary',
+      bg: 'primary',
       borderBottom: '#212933 2px dotted',
       zIndex: 2,
     },
@@ -81,25 +80,26 @@ export default {
       color: 'text',
       p: 3,
       width: '100%',
-      bg: 'background',
+      bg: 'primary',
       borderTop: '#212933 2px dotted',
     },
   },
   buttons: {
-    menuBurguer: {
-      zIndex: 2,
-    },
-    menuClose: {
-      zIndex: 2,
-      color: 'primary',
+    styleNone: {
+      padding: 0,
+      border: 'none',
+      outline: 'none',
+      font: 'inherit',
+      color: 'inherit',
+      background: 'none',
     },
   },
   cards: {
     primary: {
       bg: 'background',
       p: 3,
-      border: '#212933 2px solid',
-      boxShadow: '10px 10px 0px -5px rgba(33, 41, 51, 0.75)',
+      border: '#2e3047 2px solid',
+      boxShadow: '10px 10px 0px -5px rgba(46, 48, 71, 1)',
     },
     dotted: {
       backgroundImage: `url(
@@ -140,11 +140,10 @@ export default {
   },
   styles: {
     sideNav: {
-      display: 'flex',
       justifyContent: 'center',
       color: 'primary',
       flexDirection: 'column',
-      bg: 'secondary',
+      bg: 'primary',
       height: '100vh',
       textAlign: 'center',
       position: 'absolute',
@@ -154,8 +153,7 @@ export default {
       transition: 'color 3.3s linear',
     },
     sideNavItem: {
-      color: 'primary',
-      bg: 'secondary',
+      color: 'highlight',
       fontFamily: 'body',
       fontSize: 4,
       p: '1.8rem 0',
@@ -164,15 +162,14 @@ export default {
       textDecoration: 'none',
       width: '100%',
       ':not(:last-child)': {
-        borderBottom: '#fff78c 2px solid',
+        borderBottom: '#3bba9c 2px solid',
       },
       '&:hover': {
-        color: 'secondary',
+        color: 'text',
         bg: 'primary',
       },
     },
     topNav: {
-      display: 'flex',
       textAlign: 'center',
       position: 'relative',
       alignItems: 'center',
@@ -180,24 +177,22 @@ export default {
       maxHeight: '90%',
       boxShadow: 'none',
       flexDirection: 'row',
-      // color: 'secondary',
-      // bg: 'primary',
       height: 'inherit',
       order: 2,
       justifyContent: 'flex-end',
     },
     topNavItem: {
       color: 'text',
-      bg: 'secondary',
+      bg: 'primary',
       fontFamily: 'body',
       py: 2,
       px: 3,
       textDecoration: 'none',
       '&:hover': {
+        color: 'white',
         borderBottom: '#212933 2px dotted',
         borderRadius: 1,
-        textTransform: 'uppercase',
-        bg: 'primary',
+        bg: 'highlight',
       },
     },
     root: {
@@ -252,6 +247,23 @@ export default {
     td: {
       textAlign: 'left',
       borderBottomStyle: 'solid',
+    },
+    link: {
+      textDecoration: 'none',
+      color: 'text',
+      fontWeight: 'bold',
+      borderBottom: '#3bba9c 2px dotted',
+      '&:hover': {
+        cursor: 'pointer',
+      },
+    },
+    snippet: {
+      py: ['3%', '5%', '3%'],
+      px: ['3%', '5%', '10%'],
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-around',
     },
   },
 }

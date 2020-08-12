@@ -10,13 +10,10 @@ export default function NavIcons({ isOpen, setIsOpen }: Props) {
   return (
     <React.Fragment>
       {!isOpen ? (
-        <MenuButton
-          sx={{ variant: 'buttons.menuBurguer' }}
-          onClick={() => setIsOpen(!isOpen)}
-        />
+        <MenuButton sx={{ zIndex: 2 }} onClick={() => setIsOpen(!isOpen)} />
       ) : (
         <Close
-          sx={{ variant: 'buttons.menuClose' }}
+          sx={{ zIndex: 2, color: 'highlight' }}
           onClick={() => setIsOpen(!isOpen)}
         />
       )}

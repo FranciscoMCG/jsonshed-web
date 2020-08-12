@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import React from 'react'
 import { jsx } from 'theme-ui'
 
+import { SEO } from '../../../../components/config'
 import { Logo } from '../../../../components/graphics'
 import { Card } from '../../../../components/surfaces'
 
@@ -17,22 +17,26 @@ export default function HomeSection() {
         alignItems: 'center',
       }}
     >
+      <SEO title="Home" />
       <Card
         sx={{
           variant: 'cards.stripes',
           display: 'flex',
           justifyContent: 'center',
-          mt: '30vh',
+          mt: ['30vh', '25vh', '20vh'],
+          height: ['30%', '50%', '70%'],
+          alignItems: 'center',
         }}
       >
         <Card
           sx={{
+            variant: 'cards.primary',
             position: 'relative',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            variant: 'cards.primary',
+            height: ['90%', '70%', '70%'],
           }}
         >
           <Logo
@@ -43,8 +47,8 @@ export default function HomeSection() {
           />
           <h4
             sx={{
+              variant: 'styles.h4',
               fontSize: [1, 3, 4],
-              mt: [-1, -2, -3],
               textAlign: 'center',
             }}
           >

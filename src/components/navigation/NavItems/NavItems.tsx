@@ -21,18 +21,11 @@ const navItems: NavItem[] = [
   { title: 'contribute', to: '#contribute' },
 ]
 
-const mobileNavItems: NavItem[] = [{ title: 'home', to: '#home' }, ...navItems]
-
-const buttonStyle = {
-  padding: 0,
-  border: 'none',
-  outline: 'none',
-  font: 'inherit',
-  color: 'inherit',
-  background: 'none',
-}
 export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
-  const items = isMobile ? mobileNavItems : navItems
+  const items = isMobile
+    ? [{ title: 'home', to: '#home' }, ...navItems]
+    : navItems
+
   return (
     <React.Fragment>
       {items.map((item: NavItem, i) => (
@@ -48,7 +41,10 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
           }}
         >
           {' '}
-          <button sx={buttonStyle} onClick={() => setIsOpen(false)}>
+          <button
+            sx={{ variant: 'buttons.styleNone' }}
+            onClick={() => setIsOpen(false)}
+          >
             {item.title}
           </button>
         </Link>
@@ -56,6 +52,8 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
       <a
         href="https://github.com/FranciscoMCG/jsonshed"
         target="_blank"
+        rel="noreferrer"
+        onClick={() => setIsOpen(false)}
         sx={{
           variant: 'none',
 

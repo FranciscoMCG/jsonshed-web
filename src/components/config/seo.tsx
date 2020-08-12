@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 interface Props {
   description: string
   lang: string
-  meta: any
+  meta: { name: string; content: any; property?: undefined }
   title: string
 }
 function SEO({ description, lang, meta, title }: Props) {

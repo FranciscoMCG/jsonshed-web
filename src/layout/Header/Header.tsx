@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { jsx } from 'theme-ui'
 import { AnchorLink as Link } from 'gatsby-plugin-anchor-links'
 
@@ -9,7 +9,6 @@ import { NavBar } from '../../components/navigation/Navbar'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isSideNav, setIsSideNav] = useState(false)
 
   const { isMobile } = useViewport()
   return (
@@ -18,12 +17,7 @@ export default function Header() {
         variant: 'layout.header',
       }}
     >
-      <NavBar
-        isMobile={isMobile}
-        setIsSideNav={setIsSideNav}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-      />
+      <NavBar isMobile={isMobile} isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <Link
         to="/#home"

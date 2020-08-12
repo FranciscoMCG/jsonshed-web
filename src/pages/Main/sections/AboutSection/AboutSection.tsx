@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import React from 'react'
 import { jsx } from 'theme-ui'
 
+import { SEO } from '../../../../components/config'
 import { Card } from '../../../../components/surfaces'
 
 export default function AboutSection() {
@@ -16,6 +16,7 @@ export default function AboutSection() {
         alignItems: 'center',
       }}
     >
+      <SEO title="About" />
       <Card
         sx={{
           variant: 'cards.primary',
@@ -88,7 +89,8 @@ export default function AboutSection() {
             <a
               href="https://nodejs.org/en/"
               target="_blank"
-              sx={{ textDecoration: 'none', color: 'text', fontWeight: 'bold' }}
+              rel="noreferrer"
+              sx={{ variant: 'styles.link' }}
             >
               Node.JS
             </a>{' '}
@@ -97,7 +99,8 @@ export default function AboutSection() {
             <a
               href="https://github.com/marak/Faker.js/"
               target="_blank"
-              sx={{ textDecoration: 'none', color: 'text', fontWeight: 'bold' }}
+              rel="noreferrer"
+              sx={{ variant: 'styles.link' }}
             >
               Faker
             </a>
@@ -105,7 +108,8 @@ export default function AboutSection() {
             <a
               href="https://www.netlify.com/"
               target="_blank"
-              sx={{ textDecoration: 'none', color: 'text', fontWeight: 'bold' }}
+              rel="noreferrer"
+              sx={{ variant: 'styles.link' }}
             >
               Netlify
             </a>{' '}
@@ -113,7 +117,8 @@ export default function AboutSection() {
             <a
               href="https://www.gatsbyjs.org/"
               target="_blank"
-              sx={{ textDecoration: 'none', color: 'text', fontWeight: 'bold' }}
+              rel="noreferrer"
+              sx={{ variant: 'styles.link' }}
             >
               Gatsby
             </a>

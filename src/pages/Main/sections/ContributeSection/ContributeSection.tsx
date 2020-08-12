@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import React from 'react'
 import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
 
+import { SEO } from '../../../../components/config'
 import { Card } from '../../../../components/surfaces'
 
 const heading = {
@@ -10,27 +9,26 @@ const heading = {
   fontSize: [1, 2, 3],
 }
 
-const text = {}
-
 export default function AboutSection() {
   return (
     <section
       id="contribute"
       sx={{
-        height: '100vh',
+        height: '90vh',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}
     >
+      <SEO title="Contribute" />
       <Card
         sx={{
           variant: 'cards.charlie',
           display: 'flex',
           flexDirection: 'column',
           height: '100%',
-          width: '1000%',
+          width: '100%',
           textAlign: 'center',
           alignItems: 'center',
         }}
@@ -38,12 +36,13 @@ export default function AboutSection() {
         <Card
           sx={{
             variant: 'cards.primary',
-            mt: ['15vh', '20vh', '20vh'],
+            mt: ['10vh', '15vh', '15vh'],
             display: 'flex',
             flexDirection: 'column',
-            height: ['80%', '70%', '70%'],
+            height: ['70%', '70%', '70%'],
             width: ['80%', '70%', '80%'],
             textAlign: 'center',
+            justifyContent: 'space-evenly',
           }}
         >
           <div>
@@ -56,7 +55,7 @@ export default function AboutSection() {
               # How do I contribute?
             </h2>
           </div>
-          <div sx={{ marginTop: [2, 3, 3], height: '80%' }}>
+          <div sx={{ height: ['80%', '70%', '70%'] }}>
             <ul
               sx={{
                 listStyle: 'disc outside none',
@@ -80,13 +79,15 @@ export default function AboutSection() {
                       <a
                         href="https://github.com/FranciscoMCG/jsonshed.git"
                         target="_blank"
+                        rel="noreferrer"
                         sx={{
+                          variant: 'styles.link',
                           textDecoration: 'none',
                           color: 'text',
                           fontWeight: 'bold',
                         }}
                       >
-                        here!
+                        here
                       </a>
                     </li>
                     <li>
@@ -94,13 +95,15 @@ export default function AboutSection() {
                       <a
                         href="https://github.com/FranciscoMCG/jsonshed.git"
                         target="_blank"
+                        rel="noreferrer"
                         sx={{
+                          variant: 'styles.link',
                           textDecoration: 'none',
                           color: 'text',
                           fontWeight: 'bold',
                         }}
                       >
-                        here!
+                        here
                       </a>
                     </li>
                   </ul>
@@ -119,7 +122,9 @@ export default function AboutSection() {
                   <a
                     href="https://github.com/FranciscoMCG/jsonshed/compare"
                     target="_blank"
+                    rel="noreferrer"
                     sx={{
+                      variant: 'styles.link',
                       textDecoration: 'none',
                       color: 'text',
                       fontWeight: 'bold',

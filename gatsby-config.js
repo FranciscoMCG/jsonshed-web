@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `jsonshed web`,
-    siteUrl: `www.jsonshed.com`,
+    siteUrl: `http://www.jsonshed.com`,
     description: `Fake api for testing and prototyping`,
     author: `@franciscomcg`,
   },

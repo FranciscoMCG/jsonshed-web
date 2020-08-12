@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useEffect } from 'react'
+import React from 'react'
 import { jsx } from 'theme-ui'
 
 import { NavItems } from '../NavItems'
@@ -7,27 +7,18 @@ import { NavIcons } from '../NavIcons'
 
 interface Props {
   isMobile: boolean
-  setIsSideNav: React.Dispatch<React.SetStateAction<boolean>>
   isOpen: boolean
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function NavBar({
-  isMobile,
-  setIsSideNav,
-  isOpen,
-  setIsOpen,
-}: Props) {
-  useEffect(() => {
-    if (isMobile) setIsSideNav(true)
-  }, [isMobile])
-
+export default function NavBar({ isMobile, isOpen, setIsOpen }: Props) {
   return (
     <React.Fragment>
       {isMobile && <NavIcons isOpen={isOpen} setIsOpen={setIsOpen} />}
 
       <nav
         sx={{
+          display: 'flex',
           ...(isMobile && !isOpen && { display: 'none' }),
           ...(isMobile && isOpen && { variant: 'styles.sideNav' }),
           ...(!isMobile && {

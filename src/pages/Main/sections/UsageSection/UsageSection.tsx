@@ -1,26 +1,13 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx } from 'theme-ui'
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 
 import useViewport from '../../../../hooks/useViewport'
 import { Card } from '../../../../components/surfaces'
+import { SEO } from '../../../../components/config'
 
 export default function UsageSection() {
   const { width } = useViewport()
-
-  const data = useStaticQuery(graphql`
-    query {
-      users: file(relativePath: { eq: "users.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <section
@@ -33,6 +20,7 @@ export default function UsageSection() {
         alignItems: 'center',
       }}
     >
+      <SEO title="Usage" />
       <Card
         sx={{
           variant: 'cards.dotted',
@@ -49,7 +37,7 @@ export default function UsageSection() {
             mt: ['20vh', '20vh', '20vh'],
             display: 'flex',
             flexDirection: 'column',
-            height: ['50%', '50%', '60%'],
+            height: ['60%', '70%', '70%'],
             width: ['100%', '90%', '90%'],
             textAlign: 'center',
             justifyContent: 'space-evenly',
@@ -104,7 +92,37 @@ export default function UsageSection() {
               </React.Fragment>
             )}
           </div>
-          {/* <Img fluid={data.users.childImageSharp.fluid} alt="asdjasd" /> */}
+          <div>
+            <p
+              sx={{
+                variant: 'text.body',
+                fontSize: [1, 2, 3],
+                mt: [3, 4, 4],
+              }}
+            >
+              The available methods are:
+            </p>
+            <span sx={{ fontSize: [1, 2, 3] }}>GET, POST, PUT, POST</span>
+          </div>
+          <div>
+            <p
+              sx={{
+                variant: 'text.body',
+                fontSize: [1, 2, 3],
+                mt: [3, 4, 4],
+              }}
+            >
+              You can check the examples on{' '}
+              <a
+                href="https://github.com/FranciscoMCG/jsonshed"
+                target="_blank"
+                rel="noreferrer"
+                sx={{ variant: 'styles.link' }}
+              >
+                github
+              </a>
+            </p>
+          </div>
         </Card>
       </Card>
     </section>

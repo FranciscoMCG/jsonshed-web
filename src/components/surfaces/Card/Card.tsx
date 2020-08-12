@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import React, { PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 import { Card as ThemedCard, jsx } from 'theme-ui'
 
-export default function Card(props: PropsWithChildren<{}>) {
+export default function Card(props: PropsWithChildren<any>) {
   return (
     <ThemedCard
       sx={{

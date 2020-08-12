@@ -9,12 +9,7 @@ describe('<Navbar />', () => {
   describe('by default', () => {
     beforeEach(() => {
       renderNavbar = render(
-        <Navbar
-          isMobile={true}
-          setIsSideNav={jest.fn()}
-          isOpen={false}
-          setIsOpen={jest.fn()}
-        />
+        <Navbar isMobile={true} isOpen={false} setIsOpen={jest.fn()} />
       )
     })
     it('renders Navbar by default', () => {
@@ -26,12 +21,7 @@ describe('<Navbar />', () => {
   describe('when it is mobile and it is closed', () => {
     beforeEach(() => {
       renderNavbar = render(
-        <Navbar
-          isMobile={true}
-          setIsSideNav={jest.fn()}
-          isOpen={false}
-          setIsOpen={jest.fn()}
-        />
+        <Navbar isMobile={true} isOpen={false} setIsOpen={jest.fn()} />
       )
     })
     it('renders a burguer icon', () => {
@@ -44,12 +34,7 @@ describe('<Navbar />', () => {
   describe('when it is mobile and it is open', () => {
     beforeEach(() => {
       renderNavbar = render(
-        <Navbar
-          isMobile={true}
-          setIsSideNav={jest.fn()}
-          isOpen={true}
-          setIsOpen={jest.fn()}
-        />
+        <Navbar isMobile={true} isOpen={true} setIsOpen={jest.fn()} />
       )
     })
     it('renders a Close button', () => {
