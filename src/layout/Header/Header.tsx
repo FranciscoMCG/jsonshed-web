@@ -11,6 +11,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   const { isMobile } = useViewport()
+  console.log('isMobile', isMobile)
   return (
     <header
       sx={{
