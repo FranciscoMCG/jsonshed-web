@@ -29,7 +29,8 @@ export default function NavBar({ isMobile, isOpen, setIsOpen }: Props) {
           left: 0,
         }}
       >
-        <NavItems isMobile={isMobile} isOpen={isOpen} setIsOpen={setIsOpen} />
+        <NavItems isMobile={false} isOpen={false} setIsOpen={setIsOpen} />
+        {/* <NavItems isMobile={isMobile} isOpen={isOpen} setIsOpen={setIsOpen} /> */}
       </nav>
     </React.Fragment>
   )
