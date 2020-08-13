@@ -1,25 +1,20 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import UsageSection from './sections/UsageSection/UsageSection'
-import HomeSection from './sections/HomeSection/HomeSection'
-import AboutSection from './sections/AboutSection/AboutSection'
-import FeaturesSection from './sections/FeaturesSection/FeaturesSection'
-import ContributeSection from './sections/ContributeSection/ContributeSection'
+import { SEO } from '../../components/config'
+import { HomeSection, AboutSection, ContributeSection } from './sections'
 
 export default function Main() {
   return (
     <main
       sx={{
-        position: 'relative',
         width: '100%',
         flex: '1 1 auto',
       }}
     >
+      <SEO title="Main" />
       <HomeSection />
       <AboutSection />
-      <UsageSection />
-      <FeaturesSection />
       <ContributeSection />
     </main>
   )

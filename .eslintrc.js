@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 2,
     'no-debugger': 1,
+    'no-undef': 0,
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/explicit-function-return-type': 0,

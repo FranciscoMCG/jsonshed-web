@@ -10,22 +10,23 @@ export default function AboutSection() {
       id="about"
       sx={{
         height: '100vh',
+        position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
         alignItems: 'center',
-        mt: '-1rem',
       }}
     >
       <SEO title="About" />
       <Card
         sx={{
           variant: 'cards.primary',
+          mt: ['15vh', '20vh', '20vh'],
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-evenly',
+          height: ['80%', '70%', '70%'],
+          width: ['80%', '70%', '80%'],
           textAlign: 'center',
-          alignItems: 'center',
         }}
       >
         <div>
@@ -53,7 +54,6 @@ export default function AboutSection() {
             sx={{
               variant: 'text.heading',
               fontSize: [2, 3, 4],
-              mt: 3,
             }}
           >
             # Why have you built it Francisco?
@@ -74,7 +74,6 @@ export default function AboutSection() {
             sx={{
               variant: 'text.heading',
               fontSize: [2, 3, 4],
-              mt: 3,
             }}
           >
             # How?

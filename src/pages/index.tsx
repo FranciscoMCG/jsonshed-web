@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import { Header, Footer } from '../layout/'
-import Main from './Main/Main'
+import { Layout, Footer } from '../layout/'
 import { SEO } from '../components/config'
+import { Main } from './Main'
 
-export default function App() {
+export default function Home() {
   return (
     <div
       sx={{
@@ -15,8 +15,9 @@ export default function App() {
       }}
     >
       <SEO title="Home" />
-      <Header />
-      <Main />
+      <Layout>
+        <Main />
+      </Layout>
       <Footer />
     </div>
   )

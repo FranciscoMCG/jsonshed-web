@@ -15,9 +15,8 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
+  { title: 'docs', to: 'docs/' },
   { title: 'about', to: '#about' },
-  { title: 'usage', to: '#usage' },
-  { title: 'features', to: '#features' },
   { title: 'contribute', to: '#contribute' },
 ]
 
@@ -52,7 +51,7 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
         href="https://github.com/FranciscoMCG/jsonshed"
         target="_blank"
         rel="noreferrer"
-        onClick={() => setIsOpen(false)}
+        // onClick={() => setIsOpen(false)}
         sx={{
           variant: 'none',
 

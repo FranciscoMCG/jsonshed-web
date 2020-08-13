@@ -11,48 +11,51 @@ export default function HomeSection() {
       id="home"
       sx={{
         height: '100vh',
+        position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
         alignItems: 'center',
-        mt: '-1rem',
       }}
     >
       <SEO title="Home" />
-      <div
+      <Card
         sx={{
+          variant: 'cards.stripes',
           display: 'flex',
-          flexDirection: 'column',
+          justifyContent: 'center',
+          mt: ['30vh', '25vh', '20vh'],
+          height: ['30%', '50%', '70%'],
           alignItems: 'center',
-          justifyContent: 'space-evenly',
-          height: '30%',
         }}
       >
         <Card
           sx={{
             variant: 'cards.primary',
-            textAlign: 'center',
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: ['90%', '70%', '70%'],
           }}
         >
           <Logo
             sx={{
-              variant: 'styles.h1',
-              color: 'primary',
-              fontSize: [6, 8, 10],
+              variant: 'text.logoMain',
+              fontSize: [5, 6, 7],
             }}
           />
-          <p
+          <h4
             sx={{
-              variant: 'text.body',
-              fontSize: [1, 2, 3],
+              variant: 'styles.h4',
+              fontSize: [1, 3, 4],
               textAlign: 'center',
             }}
           >
-            a fake api for testing and prototyping&#44; built in Node.JS and
-            TypeScript
-          </p>
+            a fake api for testing and prototyping
+          </h4>
         </Card>
-      </div>
+      </Card>
     </section>
   )
 }
