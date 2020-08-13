@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Text } from 'theme-ui'
 
-import { Layout } from '../layout'
+import { Layout } from '../components/layout'
 import { SEO } from '../components/config'
 
 export default function NotFound() {

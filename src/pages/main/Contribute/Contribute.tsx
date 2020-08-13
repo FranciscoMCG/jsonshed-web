@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import { SEO } from '../../../../components/config'
-import { Card } from '../../../../components/surfaces'
+import { SEO } from '../../../components/config'
+import { Card } from '../../../components/surfaces'
 
 const heading = {
   variant: 'text.heading',
   fontSize: [1, 2, 3],
 }
 
-export default function ContributeSection() {
+export default function Contribute() {
   return (
     <section
       id="contribute"

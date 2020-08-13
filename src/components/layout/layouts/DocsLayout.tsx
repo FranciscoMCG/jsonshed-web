@@ -1,16 +1,20 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
+import { PropsWithChildren } from 'react'
 
-import { Layout, Footer } from '../layout'
-import { SEO } from '../components/config'
+import { SEO } from '../../config'
+import { Footer, Layout } from '..'
 
-export default function Docs() {
+export default function DocsLayout({ children }: PropsWithChildren<any>) {
   return (
     <div
       sx={{
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
+        margin: '5rem auto',
+        maxWidth: 800,
+        padding: `0 1rem`,
       }}
     >
       <SEO title="Documentation" />
@@ -31,7 +35,7 @@ export default function Docs() {
               mt: '-1rem',
             }}
           >
-            docs
+            {children}
           </section>
         </main>
       </Layout>

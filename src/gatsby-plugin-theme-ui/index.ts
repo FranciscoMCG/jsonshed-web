@@ -33,13 +33,9 @@ export default {
       light: {
         text: '#000',
         background: '#fff',
-        // primary - brand color for links, buttons, etc. light
         primary: '#9A1750',
-        // secondary - brand color for alternative styling. dark
         secondary: '#2E3047',
-        // highlight - A background color for highlighting text
         highlight: '#9A1750',
-        // muted - A faint color for backgrounds, borders, and accents that do not require high contrast with the background color
         muted: '##ADEDD4',
       },
     },
@@ -74,34 +70,18 @@ export default {
     header: {
       desktop: {
         display: 'flex',
-        position: 'fixed',
-        top: 0,
-        left: 0,
         height: '10vh',
         justifyContent: 'space-between',
-        px: 3,
-        py: 4,
-        alignItems: 'center',
-        width: '100%',
         bg: 'background',
         zIndex: 2,
       },
       mobile: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
         height: '10vh',
-        width: '100%',
         display: 'grid',
         gridGap: 3,
         gridTemplateColumns: 'repeat(3, 1fr)',
-        px: 3,
-        py: 3,
-        alignItems: 'center',
-        zIndex: 2,
       },
     },
-
     footer: {
       p: 3,
       width: '100%',
@@ -192,19 +172,15 @@ export default {
       height: '100vh',
       textAlign: 'center',
       position: 'absolute',
-      maxWidth: '100%',
       width: '100%',
-      boxShadow: 'none',
       transition: 'color 3.3s linear',
     },
     sideNavItem: {
       color: 'highlight',
-      fontFamily: 'body',
       fontSize: 4,
       p: '1.8rem 0',
       fontWeight: 'bold',
       letterSpacing: 2,
-      textDecoration: 'none',
       width: '100%',
       ':not(:last-child)': {
         borderBottom: '2px solid',
@@ -218,9 +194,7 @@ export default {
       textAlign: 'center',
       position: 'relative',
       alignItems: 'center',
-      maxWidth: '100%',
       maxHeight: '90%',
-      boxShadow: 'none',
       flexDirection: 'row',
       height: 'inherit',
       order: 2,
@@ -229,10 +203,8 @@ export default {
     topNavItem: {
       color: 'background',
       bg: 'primary',
-      fontFamily: 'body',
       py: 2,
       px: 3,
-      textDecoration: 'none',
       '&:hover': {
         color: 'white',
         borderBottom: '#212933 2px dotted',
@@ -302,13 +274,5 @@ export default {
         cursor: 'pointer',
       },
     },
-    // snippet: {
-    //   py: ['3%', '5%', '3%'],
-    //   px: ['3%', '5%', '10%'],
-    //   height: '100%',
-    //   display: 'flex',
-    //   flexDirection: 'column',
-    //   justifyContent: 'space-around',
-    // },
   },
 }

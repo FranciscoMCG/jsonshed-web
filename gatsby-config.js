@@ -13,7 +13,9 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve(`./src/layout/Layout/DocsLayout.tsx`),
+          default: require.resolve(
+            `./src/components/layout/layouts/DocsLayout.tsx`
+          ),
         },
       },
     },
@@ -38,8 +40,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `docs`,
-        path: `${__dirname}/src/assets/docs`,
+        name: `code`,
+        path: `${__dirname}/src/assets/code`,
       },
     },
     `gatsby-transformer-sharp`,

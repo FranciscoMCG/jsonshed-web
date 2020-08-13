@@ -33,6 +33,8 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
           to={`/${item.to}`}
           sx={{
             variant: 'none',
+            fontFamily: 'body',
+            textDecoration: 'none',
             ...(isMobile && isOpen && { variant: 'styles.sideNavItem' }),
             ...(!isMobile && {
               variant: 'styles.topNavItem',
@@ -51,10 +53,9 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
         href="https://github.com/FranciscoMCG/jsonshed"
         target="_blank"
         rel="noreferrer"
-        // onClick={() => setIsOpen(false)}
+        onClick={() => setIsOpen(false)}
         sx={{
           variant: 'none',
-
           ...(isMobile && isOpen && { variant: 'styles.sideNavItem' }),
           ...(!isMobile && {
             variant: 'styles.topNavItem',

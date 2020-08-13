@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { Layout } from '../../layout/'
+import { Layout } from '../../components/layout'
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`

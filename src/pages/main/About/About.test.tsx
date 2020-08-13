@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import * as Gatsby from 'gatsby'
 
-import AboutSection from './AboutSection'
+import About from './About'
 
 const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery')
 useStaticQuery.mockImplementation(() => ({
@@ -16,6 +16,6 @@ useStaticQuery.mockImplementation(() => ({
 }))
 
 test('renders AboutSection', () => {
-  const { container } = render(<AboutSection />)
+  const { container } = render(<About />)
   expect(container.innerHTML).toBeTruthy()
 })

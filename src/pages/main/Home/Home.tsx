@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import { SEO } from '../../../../components/config'
-import { Logo } from '../../../../components/graphics'
-import { Card } from '../../../../components/surfaces'
+import { SEO } from '../../../components/config'
+import { Logo } from '../../../components/graphics'
+import { Card } from '../../../components/surfaces'
 
-export default function HomeSection() {
+export default function Home() {
   return (
     <section
       id="home"

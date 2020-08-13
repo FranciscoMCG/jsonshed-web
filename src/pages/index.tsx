@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import { Layout, Footer } from '../layout/'
+import { Layout, Footer } from '../components/layout'
 import { SEO } from '../components/config'
-import { Main } from './Main'
+import HomeSection from './main/Home/Home'
+import About from './main/About/About'
+import Contribute from './main/Contribute/Contribute'
 
 export default function Home() {
   return (
@@ -16,7 +18,16 @@ export default function Home() {
     >
       <SEO title="Home" />
       <Layout>
-        <Main />
+        <main
+          sx={{
+            width: '100%',
+            flex: '1 1 auto',
+          }}
+        >
+          <HomeSection />
+          <About />
+          <Contribute />
+        </main>
       </Layout>
       <Footer />
     </div>

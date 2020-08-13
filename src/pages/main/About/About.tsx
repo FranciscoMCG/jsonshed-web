@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 
-import { SEO } from '../../../../components/config'
-import { Card } from '../../../../components/surfaces'
+import { SEO } from '../../../components/config'
+import { Card } from '../../../components/surfaces'
 
-export default function AboutSection() {
+export default function About() {
   return (
     <section
       id="about"

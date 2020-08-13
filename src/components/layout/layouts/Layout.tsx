@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react'
 
 import { Header } from '../'
-import { ColorModeButton } from '../../components/inputs/'
+import { ColorModeButton } from '../../inputs'
 
 export default function Layout({ children }: PropsWithChildren<any>) {
   return (
