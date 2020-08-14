@@ -19,7 +19,6 @@ export default function Header() {
         left: 0,
         width: '100%',
         px: 3,
-        py: 4,
         alignItems: 'center',
         variant: 'layout.header.mobile',
         zIndex: 2,

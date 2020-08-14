@@ -56,6 +56,7 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
         onClick={() => setIsOpen(false)}
         sx={{
           variant: 'none',
+          textDecoration: 'none',
           ...(isMobile && isOpen && { variant: 'styles.sideNavItem' }),
           ...(!isMobile && {
             variant: 'styles.topNavItem',

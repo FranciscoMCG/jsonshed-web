@@ -14,6 +14,7 @@ export default function Home() {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
+        p: 3,
       }}
     >
       <SEO title="Home" />

@@ -3,43 +3,52 @@ import { jsx } from 'theme-ui'
 import { PropsWithChildren } from 'react'
 
 import { SEO } from '../../config'
-import { Footer, Layout } from '..'
+import { Footer, SideNav, Header } from '..'
+import { ColorModeButton } from '../../inputs'
+import useViewport from '../../../hooks/useViewport'
 
 export default function DocsLayout({ children }: PropsWithChildren<any>) {
+  const { isMobile } = useViewport()
   return (
     <div
       sx={{
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
-        margin: '5rem auto',
-        maxWidth: 800,
+        margin: '0.7rem auto 0 auto',
+        maxWidth: '100%',
         padding: `0 1rem`,
       }}
     >
       <SEO title="Documentation" />
-      <Layout>
-        <main
+      <Header />
+      <main
+        sx={{
+          width: '100%',
+          flex: '1 1 auto',
+        }}
+      >
+        {!isMobile && <SideNav />}
+        <section
           sx={{
-            width: '100%',
-            flex: '1 1 auto',
+            height: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            mt: 8,
+            p: 0,
+            ...(!isMobile && { p: 4 }),
+            ml: 0,
+            ...(!isMobile && { ml: '12rem' }),
           }}
         >
-          <section
-            sx={{
-              height: '100vh',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              mt: '-1rem',
-            }}
-          >
-            {children}
-          </section>
-        </main>
-      </Layout>
-      <Footer />
+          {children}
+        </section>
+      </main>
+      <Footer
+        sx={{ zIndex: 0, marginLeft: '13.5rem', marginBottom: '0.6rem' }}
+      />
+      <ColorModeButton />
     </div>
   )
 }

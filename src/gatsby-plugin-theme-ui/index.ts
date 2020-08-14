@@ -1,3 +1,5 @@
+import nightOwl from '@theme-ui/prism/presets/night-owl.json'
+
 export default {
   breakpoints: ['27.5em', '40em', '52em'],
   space: [0, 4, 8, 16, 24, 32, 40, 48, 56, 64],
@@ -79,14 +81,42 @@ export default {
         height: '10vh',
         display: 'grid',
         gridGap: 3,
+        bg: 'background',
         gridTemplateColumns: 'repeat(3, 1fr)',
       },
     },
     footer: {
-      p: 3,
       width: '100%',
       color: 'highlight',
       bg: 'background',
+    },
+    docsSideNav: {
+      position: 'fixed',
+      top: 0,
+      bottom: 0,
+      width: '12rem',
+      height: '100%',
+      mt: 7,
+      bg: 'background',
+      borderRight: '2px solid',
+    },
+    docsSideNavHeading: {
+      textDecoration: 'none',
+      variant: 'styles.h3',
+      mt: 3,
+      mb: 1,
+      '&:hover': {
+        cursor: 'pointer',
+        color: 'highlight',
+      },
+    },
+    docsSideNavBody: {
+      textDecoration: 'none',
+      variant: 'text.body',
+      '&:hover': {
+        cursor: 'pointer',
+        color: 'highlight',
+      },
     },
   },
   buttons: {
@@ -208,7 +238,7 @@ export default {
       '&:hover': {
         color: 'white',
         borderBottom: '#212933 2px dotted',
-        borderRadius: 1,
+        borderRadius: 2,
         bg: 'highlight',
       },
     },
@@ -247,10 +277,12 @@ export default {
       code: {
         color: 'inherit',
       },
+      highlight: {
+        background: 'hsla(0, 0%, 30%, .5)',
+      },
     },
     code: {
-      fontFamily: 'monospace',
-      fontSize: 'inherit',
+      ...nightOwl,
     },
     table: {
       width: '100%',
