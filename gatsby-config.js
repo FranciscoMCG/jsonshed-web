@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `jsonshed web`,
+    title: `jsonshed`,
     siteUrl: `http://www.jsonshed.com`,
     description: `Fake api for testing and prototyping`,
     author: `@franciscomcg`,
@@ -10,10 +10,31 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-theme-ui',
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve(
+            `./src/components/layout/layouts/DocsLayout.tsx`
+          ),
+        },
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {},
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -21,7 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: ['Comfortaa'],
+        fonts: ['Comfortaa', 'Oswald'],
         display: 'swap',
       },
     },

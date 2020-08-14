@@ -15,9 +15,8 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
+  { title: 'docs', to: 'docs/' },
   { title: 'about', to: '#about' },
-  { title: 'usage', to: '#usage' },
-  { title: 'features', to: '#features' },
   { title: 'contribute', to: '#contribute' },
 ]
 
@@ -34,6 +33,8 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
           to={`/${item.to}`}
           sx={{
             variant: 'none',
+            fontFamily: 'body',
+            textDecoration: 'none',
             ...(isMobile && isOpen && { variant: 'styles.sideNavItem' }),
             ...(!isMobile && {
               variant: 'styles.topNavItem',
@@ -55,7 +56,7 @@ export default function NavItems({ isMobile, isOpen, setIsOpen }: Props) {
         onClick={() => setIsOpen(false)}
         sx={{
           variant: 'none',
-
+          textDecoration: 'none',
           ...(isMobile && isOpen && { variant: 'styles.sideNavItem' }),
           ...(!isMobile && {
             variant: 'styles.topNavItem',

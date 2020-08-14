@@ -3,19 +3,26 @@ import { useState } from 'react'
 import { jsx } from 'theme-ui'
 import { AnchorLink as Link } from 'gatsby-plugin-anchor-links'
 
-import useViewport from '../../hooks/useViewport'
-import { Logo } from '../../components/graphics'
-import { NavBar } from '../../components/navigation/Navbar'
+import { Logo } from '../../graphics'
+import { NavBar } from '../../navigation/Navbar'
+import useViewport from '../../../hooks/useViewport'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-
   const { isMobile } = useViewport()
-  console.log('isMobile', isMobile)
+
   return (
     <header
       sx={{
-        variant: 'layout.header',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        px: 3,
+        alignItems: 'center',
+        variant: 'layout.header.mobile',
+        zIndex: 2,
+        ...(!isMobile && { variant: 'layout.header.desktop' }),
       }}
     >
       <NavBar isMobile={isMobile} isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -25,9 +32,10 @@ export default function Header() {
         sx={{
           textDecoration: 'none',
           py: 1,
+          justifySelf: 'center',
         }}
       >
-        <Logo sx={{ variant: 'text.logoHeader' }} />
+        <Logo sx={{ variant: 'styles.h3', color: 'primary' }} />
       </Link>
     </header>
   )

@@ -3,20 +3,30 @@ import { useEffect, useState } from 'react'
 export const isBrowser = () => typeof window !== 'undefined'
 
 export default function useViewport() {
-  const [width, setWidth] = useState(isBrowser() && window.innerWidth)
-  const [isMobile, setIsMobile] = useState(false)
+  const isSSR = typeof window !== 'undefined'
+  const [windowSize, setWindowSize] = useState({
+    width: isSSR ? 1200 : isBrowser() && window.innerWidth,
+    height: isSSR ? 800 : isBrowser() && window.innerHeight,
+  })
+  const [isMobile, setIsMobile] = useState(true)
 
-  const mobileBreakpoint = 640
+  function changeWindowSize() {
+    setWindowSize({ width: window.innerWidth, height: window.innerHeight })
+  }
 
   useEffect(() => {
-    if (width < mobileBreakpoint) setIsMobile(true)
-  }, [width])
+    isBrowser() && window.innerWidth > 640
+      ? setIsMobile(false)
+      : setIsMobile(true)
+  }, [windowSize])
 
   useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
-    return () => window.removeEventListener('resize', handleWindowResize)
+    isBrowser() && window.addEventListener('resize', changeWindowSize)
+
+    return () => {
+      isBrowser() && window.removeEventListener('resize', changeWindowSize)
+    }
   }, [])
 
-  return { width, isMobile }
+  return { windowSize, isMobile }
 }

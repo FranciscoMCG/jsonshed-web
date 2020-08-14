@@ -1,13 +1,16 @@
+import nightOwl from '@theme-ui/prism/presets/night-owl.json'
+
 export default {
   breakpoints: ['27.5em', '40em', '52em'],
   space: [0, 4, 8, 16, 24, 32, 40, 48, 56, 64],
   fonts: {
     body:
       'Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
-    heading: 'Comfortaa',
+    heading:
+      'Oswald, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
     monospace: 'Menlo, monospace',
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 80, 96, 112],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -18,18 +21,26 @@ export default {
     heading: 1.125,
   },
   colors: {
-    black: '#000',
-    white: '#fff',
-    text: 'white',
-    background: '#707793',
+    text: '#fff',
+    background: '#0b0c10',
     // primary - brand color for links, buttons, etc. light
-    primary: '#43455c',
+    primary: '#66fcf1',
     // secondary - brand color for alternative styling. dark
     secondary: '#2e3047',
     // highlight - A background color for highlighting text
-    highlight: '#3bba9c',
+    highlight: '#66fcf1',
     // muted - A faint color for backgrounds, borders, and accents that do not require high contrast with the background color
-    muted: '##adedd4',
+    muted: '#c5c6c7',
+    modes: {
+      light: {
+        text: '#000',
+        background: '#fff',
+        primary: '#9A1750',
+        secondary: '#2E3047',
+        highlight: '#9A1750',
+        muted: '##ADEDD4',
+      },
+    },
   },
   text: {
     logoHeader: {
@@ -59,32 +70,76 @@ export default {
   },
   layout: {
     header: {
-      display: 'flex',
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      height: '10vh',
-      justifyContent: 'space-between',
-      p: '0.5rem 1rem',
-      alignItems: 'center',
-      width: '100%',
-      bg: 'primary',
-      borderBottom: '#212933 2px dotted',
-      zIndex: 2,
+      desktop: {
+        display: 'flex',
+        height: '10vh',
+        justifyContent: 'space-between',
+        bg: 'background',
+        zIndex: 2,
+      },
+      mobile: {
+        height: '10vh',
+        display: 'grid',
+        gridGap: 3,
+        bg: 'background',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+      },
     },
     footer: {
-      display: 'flex',
-      justifyContent: 'flex-end',
-      height: '7vh',
-      alignItems: 'center',
-      color: 'text',
-      p: 3,
       width: '100%',
-      bg: 'primary',
-      borderTop: '#212933 2px dotted',
+      color: 'highlight',
+      bg: 'background',
+    },
+    docsSideNav: {
+      position: 'fixed',
+      top: 0,
+      bottom: 0,
+      width: '12rem',
+      height: '100%',
+      mt: 7,
+      bg: 'background',
+      borderRight: '2px solid',
+    },
+    docsSideNavHeading: {
+      textDecoration: 'none',
+      variant: 'styles.h3',
+      mt: 3,
+      mb: 1,
+      '&:hover': {
+        cursor: 'pointer',
+        color: 'highlight',
+      },
+    },
+    docsSideNavBody: {
+      textDecoration: 'none',
+      variant: 'text.body',
+      '&:hover': {
+        cursor: 'pointer',
+        color: 'highlight',
+      },
     },
   },
   buttons: {
+    primary: {
+      appearance: 'none',
+      display: 'inline-block',
+      textAlign: 'center',
+      lineHeight: 'inherit',
+      textDecoration: 'none',
+      fontSize: 'inherit',
+      fontWeight: 'bold',
+      m: 0,
+      px: [2, 2, 3],
+      py: [1, 2, 2],
+      border: 0,
+      borderRadius: 2,
+      color: 'background',
+      bg: 'primary',
+    },
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+    },
     styleNone: {
       padding: 0,
       border: 'none',
@@ -100,6 +155,7 @@ export default {
       p: 3,
       border: '#2e3047 2px solid',
       boxShadow: '10px 10px 0px -5px rgba(46, 48, 71, 1)',
+      borderRadius: 2,
     },
     dotted: {
       backgroundImage: `url(
@@ -141,28 +197,23 @@ export default {
   styles: {
     sideNav: {
       justifyContent: 'center',
-      color: 'primary',
       flexDirection: 'column',
-      bg: 'primary',
+      bg: 'background',
       height: '100vh',
       textAlign: 'center',
       position: 'absolute',
-      maxWidth: '100%',
       width: '100%',
-      boxShadow: 'none',
       transition: 'color 3.3s linear',
     },
     sideNavItem: {
       color: 'highlight',
-      fontFamily: 'body',
       fontSize: 4,
       p: '1.8rem 0',
       fontWeight: 'bold',
       letterSpacing: 2,
-      textDecoration: 'none',
       width: '100%',
       ':not(:last-child)': {
-        borderBottom: '#3bba9c 2px solid',
+        borderBottom: '2px solid',
       },
       '&:hover': {
         color: 'text',
@@ -173,25 +224,21 @@ export default {
       textAlign: 'center',
       position: 'relative',
       alignItems: 'center',
-      maxWidth: '100%',
       maxHeight: '90%',
-      boxShadow: 'none',
       flexDirection: 'row',
       height: 'inherit',
       order: 2,
       justifyContent: 'flex-end',
     },
     topNavItem: {
-      color: 'text',
+      color: 'background',
       bg: 'primary',
-      fontFamily: 'body',
       py: 2,
       px: 3,
-      textDecoration: 'none',
       '&:hover': {
         color: 'white',
         borderBottom: '#212933 2px dotted',
-        borderRadius: 1,
+        borderRadius: 2,
         bg: 'highlight',
       },
     },
@@ -230,10 +277,12 @@ export default {
       code: {
         color: 'inherit',
       },
+      highlight: {
+        background: 'hsla(0, 0%, 30%, .5)',
+      },
     },
     code: {
-      fontFamily: 'monospace',
-      fontSize: 'inherit',
+      ...nightOwl,
     },
     table: {
       width: '100%',
@@ -252,18 +301,10 @@ export default {
       textDecoration: 'none',
       color: 'text',
       fontWeight: 'bold',
-      borderBottom: '#3bba9c 2px dotted',
+      borderBottom: '2px dotted',
       '&:hover': {
         cursor: 'pointer',
       },
-    },
-    snippet: {
-      py: ['3%', '5%', '3%'],
-      px: ['3%', '5%', '10%'],
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-around',
     },
   },
 }

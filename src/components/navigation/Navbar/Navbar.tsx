@@ -19,6 +19,8 @@ export default function NavBar({ isMobile, isOpen, setIsOpen }: Props) {
       <nav
         sx={{
           display: 'flex',
+          boxShadow: 'none',
+          maxWidth: '100%',
           ...(isMobile && !isOpen && { display: 'none' }),
           ...(isMobile && isOpen && { variant: 'styles.sideNav' }),
           ...(!isMobile && {
