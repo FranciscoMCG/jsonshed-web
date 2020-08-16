@@ -91,6 +91,7 @@ export default {
       bg: 'background',
     },
     docsSideNav: {
+      overflowX: 'hidden',
       position: 'fixed',
       top: 0,
       bottom: 0,

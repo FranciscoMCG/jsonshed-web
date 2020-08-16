@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { PropsWithChildren } from 'react'
 
 import { SEO } from '../../config'
-import { Footer, SideNav, Header } from '..'
+import { Footer, DocsSideNav, Header } from '..'
 import { ColorModeButton } from '../../inputs'
 import useViewport from '../../../hooks/useViewport'
 
@@ -17,7 +17,7 @@ export default function DocsLayout({ children }: PropsWithChildren<any>) {
         minHeight: '100vh',
         margin: '0.7rem auto 0 auto',
         maxWidth: '100%',
-        padding: `0 1rem`,
+        p: `1rem`,
       }}
     >
       <SEO title="Documentation" />
@@ -28,7 +28,7 @@ export default function DocsLayout({ children }: PropsWithChildren<any>) {
           flex: '1 1 auto',
         }}
       >
-        {!isMobile && <SideNav />}
+        {!isMobile && <DocsSideNav />}
         <section
           sx={{
             height: '100vh',
@@ -45,9 +45,7 @@ export default function DocsLayout({ children }: PropsWithChildren<any>) {
           {children}
         </section>
       </main>
-      <Footer
-        sx={{ zIndex: 0, marginLeft: '13.5rem', marginBottom: '0.6rem' }}
-      />
+      <Footer isMobile={isMobile} isDocsLayout={true} sx={{ zIndex: 0 }} />
       <ColorModeButton />
     </div>
   )

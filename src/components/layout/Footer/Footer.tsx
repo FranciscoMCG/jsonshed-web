@@ -1,17 +1,27 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { PropsWithChildren } from 'react'
 
-export default function Footer(props: PropsWithChildren<any>) {
+interface Props {
+  isDocsLayout?: boolean
+  isMobile?: boolean
+}
+
+export default function Footer({ isDocsLayout, isMobile }: Props) {
   return (
     <footer
-      {...props}
       sx={{
         variant: 'layout.footer',
       }}
     >
       <span
         sx={{
+          ...(isDocsLayout && {
+            ml: '13.5rem',
+          }),
+          ...(isDocsLayout &&
+            isMobile && {
+              ml: 0,
+            }),
           fontSize: 1,
           variant: 'text.body',
         }}

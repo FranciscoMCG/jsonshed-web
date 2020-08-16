@@ -14,7 +14,6 @@ export default function About() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        mt: '-1rem',
       }}
     >
       <SEO title="About" />
@@ -26,6 +25,7 @@ export default function About() {
           justifyContent: 'space-evenly',
           textAlign: 'center',
           alignItems: 'center',
+          p: 5,
         }}
       >
         <div>

@@ -19,7 +19,6 @@ export default function Contribute() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        mt: '-1rem',
       }}
     >
       <SEO title="About" />
@@ -31,7 +30,7 @@ export default function Contribute() {
           justifyContent: 'space-evenly',
           textAlign: 'center',
           alignItems: 'center',
-          height: '60%',
+          p: 5,
         }}
       >
         <div>
@@ -44,7 +43,7 @@ export default function Contribute() {
             # How do I contribute?
           </h2>
         </div>
-        <div sx={{ height: ['80%', '70%', '70%'] }}>
+        <div>
           <ul
             sx={{
               listStyle: 'disc outside none',
@@ -56,7 +55,6 @@ export default function Contribute() {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-evenly',
-              height: '100%',
             }}
           >
             <div>
