@@ -5,8 +5,8 @@ export const isBrowser = () => typeof window !== 'undefined'
 export default function useViewport() {
   const isSSR = typeof window !== 'undefined'
   const [windowSize, setWindowSize] = useState({
-    width: isSSR ? 1200 : isBrowser() && window.innerWidth,
-    height: isSSR ? 800 : isBrowser() && window.innerHeight,
+    width: isSSR ? 1200 : window.innerWidth,
+    height: isSSR ? 800 : window.innerHeight,
   })
   const [isMobile, setIsMobile] = useState(true)
 
@@ -15,16 +15,14 @@ export default function useViewport() {
   }
 
   useEffect(() => {
-    isBrowser() && window.innerWidth > 640
-      ? setIsMobile(false)
-      : setIsMobile(true)
-  }, [windowSize])
+    window.innerWidth > 640 ? setIsMobile(false) : setIsMobile(true)
+  }, [windowSize.width])
 
   useEffect(() => {
-    isBrowser() && window.addEventListener('resize', changeWindowSize)
+    window.addEventListener('resize', changeWindowSize)
 
     return () => {
-      isBrowser() && window.removeEventListener('resize', changeWindowSize)
+      window.removeEventListener('resize', changeWindowSize)
     }
   }, [])
 

@@ -9,6 +9,7 @@ import useViewport from '../../../hooks/useViewport'
 
 export default function DocsLayout({ children }: PropsWithChildren<any>) {
   const { isMobile } = useViewport()
+
   return (
     <div
       sx={{
@@ -32,9 +33,6 @@ export default function DocsLayout({ children }: PropsWithChildren<any>) {
         <section
           sx={{
             height: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
             mt: 8,
             p: 0,
             ...(!isMobile && { p: 4 }),
@@ -45,7 +43,7 @@ export default function DocsLayout({ children }: PropsWithChildren<any>) {
           {children}
         </section>
       </main>
-      <Footer isMobile={isMobile} isDocsLayout={true} sx={{ zIndex: 0 }} />
+      {/* <Footer isMobile={isMobile} isDocsLayout={true} sx={{ zIndex: 0 }} /> */}
       <ColorModeButton />
     </div>
   )

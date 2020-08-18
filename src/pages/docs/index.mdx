@@ -1,9 +1,24 @@
 ---
-title: Docs!
+title: Docs
 path: src/pages/docs
 date: 2020-08-14
 ---
 
-import { jsx } from 'theme-ui'
+import DocsLayout from '../../components/layout/layouts/DocsLayout'
+import { Example, Paragraph, ExampleTitle } from './content/components'
+import Introduction from './content/introduction.mdx'
+import Users from './content/users.mdx'
 
-# Documentation coming soon
+<DocsLayout>
+
+<Introduction />
+
+<Paragraph size={9} />
+
+<Users />
+
+</DocsLayout>
+
+
+
+

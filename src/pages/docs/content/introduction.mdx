@@ -1,0 +1,95 @@
+import { Example, Paragraph, ExampleTitle } from './components'
+
+<h1 id="introduction">Introduction</h1>
+
+<Paragraph size={6} />
+
+<h2 id="info">Info</h2>
+
+<Paragraph />
+
+JSONSHED is a fake REST api for testing and prototyping, built in Node.JS and TypeScript.
+
+The 4 main HTTP request methods are supported: GET, PUT, PATCH, POST.
+
+<ExampleTitle>
+
+Base url:
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com
+```
+
+</Example>
+
+<Paragraph />
+At the moment there are 3 available resources: Users, Todos and Posts.
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="pagination">Pagination</h2>
+
+<Paragraph />
+
+All paginated requests are returned with an object with some information:
+
+<Paragraph />
+
+| Keys        | Types     | Description           |
+| ------------|:---------:| ---------------------:|
+| page        | int       | current page          |
+| limit       | int       | quantity per page     |
+| total pages | int       | total amount of pages |
+| results     | array     | results               |
+
+<ExampleTitle size={6}>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/todos?page=2&limit=2
+```
+
+</Example>
+
+<Example>
+
+```jsx
+{
+  page: 2,
+  limit: 2,
+  totalPages: 25,
+  results: [
+    {
+      userId: '1',
+      id: '3',
+      title: 'voluptatem et reprehenderit',
+      completed: false
+    },
+    {
+      userId: '9',
+      id: '4',
+      title: 'reprehenderit tenetur corporis',
+      completed: true
+    }
+  ]
+}
+  ```
+
+</Example>
+
+<Paragraph size={6} />
+
+---

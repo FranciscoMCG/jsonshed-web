@@ -6,17 +6,14 @@ module.exports = {
     author: `@franciscomcg`,
   },
   plugins: [
+    'gatsby-plugin-typescript',
     'gatsby-plugin-anchor-links',
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-theme-ui',
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        defaultLayouts: {
-          default: require.resolve(
-            `./src/components/layout/layouts/DocsLayout.tsx`
-          ),
-        },
+        extensions: ['.mdx', '.md'],
       },
     },
     {

@@ -2,7 +2,7 @@ import nightOwl from '@theme-ui/prism/presets/night-owl.json'
 
 export default {
   breakpoints: ['27.5em', '40em', '52em'],
-  space: [0, 4, 8, 16, 24, 32, 40, 48, 56, 64],
+  space: [0, 4, 8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112],
   fonts: {
     body:
       'Roboto, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif',
@@ -292,11 +292,19 @@ export default {
     },
     th: {
       textAlign: 'left',
+      height: '1.7rem',
+      fontWeight: 'bold',
       borderBottomStyle: 'solid',
+      borderBottom: '1px solid #ddd',
+      pr: 2,
     },
     td: {
       textAlign: 'left',
+      height: '2.7rem',
       borderBottomStyle: 'solid',
+      borderBottom: '1px solid #ddd',
+      verticalAlign: 'middle',
+      pr: 2,
     },
     link: {
       textDecoration: 'none',

@@ -1,0 +1,180 @@
+import { Example, Paragraph, ExampleTitle, Pre, Li } from './components'
+
+<h1 id="users">Users</h1>
+
+<Paragraph size={6} />
+
+## Schema
+
+<Paragraph />
+
+| Keys          | Types         | Description                                                                     |
+| --------------|:-------------:| -------------------------------------------------------------------------------:|
+| id            | string        | user id                                                                         |
+| title         | string        | user title                                                                      |
+| firstName     | string        | user first name                                                                 |
+| lastName      | string        | user last name                                                                  |
+| email         | string        | user email                                                                      |
+| avatar        | string (url)  | user avatar image                                                               |
+| address       | object        | user address with the keys 'street', 'city', 'zipCode' and country (all string) |
+| jobTitle      | string        | user job title                                                                  |
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="get-all-users">Get all users</h2>
+
+<Paragraph />
+
+Users can be requested through the <Pre>/users</Pre> endpoint
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/users
+```
+
+</Example>
+
+<Paragraph />
+
+<Example>
+
+```json
+[
+  {
+    "id": "1",
+    "firstName": "Claudia",
+    "lastName": "Murazik",
+    "email": "Arno53@yahoo.com",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/overra/128.jpg",
+    "address": {
+      "street": "Hilll Forks",
+      "city": "West Aylinton",
+      "zipCode": "68999-7839",
+      "country": "Isle of Man"
+    },
+    "jobTitle": "Lead Accountability Specialist"
+  },
+  {
+      // ...
+  }
+]
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="get-single-user">Get a single user</h2>
+
+<Paragraph />
+
+A single user can be requested through the <Pre>/users/:id</Pre> endpoint
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/users/10
+```
+
+</Example>
+
+<Paragraph />
+
+<Example>
+
+```json
+{
+  "id": "10",
+  "firstName": "Aurore",
+  "lastName": "Boyle",
+  "email": "Frida_Streich@hotmail.com",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/robturlinckx/128.jpg",
+  "address": {
+    "street": "Thaddeus Cliff",
+    "city": "Gibsonfort",
+    "zipCode": "97332-3387",
+    "country": "Dominica"
+  },
+  "jobTitle": "Dynamic Accounts Coordinator"
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+<h2 id="filter-users">Filter users</h2>
+
+<Paragraph />
+
+Using query parameters will allow you to filter users by their keys.
+
+<Paragraph />
+
+Available parameters:
+
+<Li>id</Li>
+<Li>firstName</Li>
+<Li>lastName</Li>
+<Li>email</Li>
+<Li>jobtitle</Li>
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/users?firstName=Amalia
+```
+
+</Example>
+
+<Paragraph />
+
+<Example>
+
+```json
+[
+  {
+    "id": "5",
+    "firstName": "Amalia",
+    "lastName": "Mills",
+    "email": "Price_Jerde@hotmail.com",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/oaktreemedia/128.jpg",
+    "address": {
+      "street": "Goodwin Rest",
+      "city": "Homenickmouth",
+      "zipCode": "25816",
+      "country": "Sudan"
+    },
+    "jobTitle": "National Integration Designer"
+  }
+]
+```
+
+</Example>
