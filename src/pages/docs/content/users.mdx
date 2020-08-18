@@ -124,11 +124,15 @@ https://api.jsonshed.com/users/10
 
 <Paragraph size={6} />
 
+---
+
+<Paragraph size={6} />
+
 <h2 id="create-user">Create a user</h2>
 
 <Paragraph />
 
-A single user can be requested through the <Pre>/users/:id</Pre> endpoint by using the PUT method. The <Pre>id</Pre> of a resource can't be updated and all properties must be provided.
+A user can be created through the <Pre>/users</Pre> endpoint by using the POST method. The <Pre>id</Pre> will be auto-generated.
 
 <ExampleTitle>
 
@@ -139,7 +143,7 @@ Example Request
 <Example>
 
 ```bash
-https://api.jsonshed.com/users/1
+https://api.jsonshed.com/users
 ```
 
 </Example>
@@ -154,18 +158,9 @@ Example Body
 
 ```json
 {
-  "title": "Corporate Communications Architect",
-  "firstName": "Claudia",
-  "lastName": "Murazik",
-  "email": "Arno53@yahoo.com",
-  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/overra/128.jpg",
-  "address": {
-    "street": "Hilll Forks",
-    "city": "West Aylinton",
-    "zipCode": "68999-7839",
-    "country": "Isle of Man"
-  },
-  "jobTitle": "Lead Accountability Specialist"
+  "firstName": "Jerry",
+  "lastName": "Roob",
+  "email": "Jerry_Stokes43@hotmail.com"
 }
 ```
 
@@ -183,19 +178,10 @@ Return
 
 ```json
 {
-  "id": "1",
-  "title": "District Usability Facilitator",
-  "firstName": "Al",
+  "firstName": "Jerry",
   "lastName": "Roob",
-  "email": "Joy_Stokes43@hotmail.com",
-  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/pcridesagain/128.jpg",
-  "address": {
-    "street": "Purdy Square",
-    "city": "East Terrell",
-    "zipCode": "30728-0414",
-    "country": "Trinidad and Tobago"
-  },
-  "jobTitle": "Legacy Implementation Agent"
+  "email": "Jerry_Stokes43@hotmail.com",
+  "id": "11"
 }
 ```
 
@@ -203,11 +189,57 @@ Return
 
 <Paragraph size={6} />
 
+---
+
+<Paragraph size={6} />
+
+<h2 id="delete-user">Delete a user</h2>
+
+<Paragraph />
+
+A user can be deleted through the <Pre>/users/:id</Pre> endpoint by using the DELETE method.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/users/1
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+ok
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
 <h2 id="update-user">Update a user</h2>
 
 <Paragraph />
 
-A single user can be requested through the <Pre>/users/:id</Pre> endpoint by using the PATCH method. The <Pre>id</Pre> of a resource can't be updated.
+A user can be updated through the <Pre>/users/:id</Pre> endpoint by using the PATCH method. The <Pre>id</Pre> of a resource can't be updated.
 
 <ExampleTitle>
 
@@ -233,9 +265,9 @@ Example Body
 
 ```json
 {
-   "firstName": "Westley",
-   "lastName": "Hintz",
-   "email": "Crystal.Langworth84@gmail.com"
+  "firstName": "Westley",
+  "lastName": "Hintz",
+  "email": "Crystal.Langworth84@gmail.com"
 }
 ```
 
@@ -273,11 +305,15 @@ Return
 
 <Paragraph size={6} />
 
+---
+
+<Paragraph size={6} />
+
 <h2 id="replace-user">Replace a user</h2>
 
 <Paragraph />
 
-A single user can be requested through the <Pre>/users/:id</Pre> endpoint by using the PUT method. The <Pre>id</Pre> of a resource can't be updated and all properties must be provided.
+A user can be replaced through the <Pre>/users/:id</Pre> endpoint by using the PUT method. The <Pre>id</Pre> of a resource can't be updated and all properties must be provided.
 
 <ExampleTitle>
 
@@ -349,6 +385,10 @@ Return
 ```
 
 </Example>
+
+<Paragraph size={6} />
+
+---
 
 <Paragraph size={6} />
 
