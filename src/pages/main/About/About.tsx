@@ -25,17 +25,17 @@ export default function About() {
           justifyContent: 'space-evenly',
           textAlign: 'center',
           alignItems: 'center',
-          p: 5,
+          p: [5, 6, 7],
         }}
       >
         <div>
           <h2
             sx={{
-              variant: 'text.heading',
+              variant: 'styles.h2',
               fontSize: [2, 3, 4],
             }}
           >
-            # What are we witnessing?
+            What are we witnessing?
           </h2>
           <p
             sx={{
@@ -51,12 +51,12 @@ export default function About() {
         <div>
           <h2
             sx={{
-              variant: 'text.heading',
+              variant: 'styles.h2',
               fontSize: [2, 3, 4],
               mt: 3,
             }}
           >
-            # Why have you built it Francisco?
+            Why have you built it Francisco?
           </h2>
           <p
             sx={{
@@ -72,12 +72,12 @@ export default function About() {
         <div>
           <h2
             sx={{
-              variant: 'text.heading',
+              variant: 'styles.h2',
               fontSize: [2, 3, 4],
               mt: 3,
             }}
           >
-            # How?
+            How?
           </h2>
           <p
             sx={{
@@ -107,12 +107,12 @@ export default function About() {
             </a>
             . It&#39;s hosted on{' '}
             <a
-              href="https://www.netlify.com/"
+              href="https://aws.amazon.com/"
               target="_blank"
               rel="noreferrer"
               sx={{ variant: 'styles.link' }}
             >
-              Netlify
+              AWS
             </a>{' '}
             and the website was built with{' '}
             <a

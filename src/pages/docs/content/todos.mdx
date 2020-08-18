@@ -1,0 +1,403 @@
+import { Example, Paragraph, ExampleTitle, Pre, Li } from '../../../components/mdxComponents'
+
+<h1 id="todos">Todos</h1>
+
+<Paragraph size={6} />
+
+<h2 id="todos-schema">Schema</h2>
+
+<Paragraph />
+
+| Keys          | Types         | Description                                                                     |
+| --------------|:-------------:| -------------------------------------------------------------------------------:|
+| userId        | string        | user id                                                                         |
+| id            | string        | todo id                                                                         |
+| title         | string        | todo title                                                                      |
+| completed     | boolean       | todo completion status                                                          |
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="get-all-todos">Get all todos</h2>
+
+<Paragraph />
+
+Todos can be requested through the <Pre>/todos</Pre> endpoint by using the GET method
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/todos
+```
+
+</Example>
+
+<Paragraph />
+
+<Example>
+
+```json
+[
+  {
+    "userId": "7",
+    "id": "1",
+    "title": "quo provident culpa",
+    "completed": true
+  },
+  {
+      // ...
+  }
+]
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="get-single-todo">Get a single todo</h2>
+
+<Paragraph />
+
+A single todo can be requested through the <Pre>/todos/:id</Pre> endpoint by using the GET method
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/todos/10
+```
+
+</Example>
+
+<Paragraph />
+
+<Example>
+
+```json
+{
+  "userId": "1",
+  "id": "10",
+  "title": "et vero enim",
+  "completed": true
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="create-todo">Create a todo</h2>
+
+<Paragraph />
+
+A todo can be created through the <Pre>/todos</Pre> endpoint by using the POST method. The <Pre>id</Pre> will be auto-generated.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/todos
+```
+
+</Example>
+
+<ExampleTitle>
+
+Example Body
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{  
+  "userId": "1",
+  "title": "Buying a book",
+  "completed": false
+}
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "1",
+  "title": "Buying a book",
+  "completed": false
+  "id": "51"
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="delete-todo">Delete a todo</h2>
+
+<Paragraph />
+
+A todo can be deleted through the <Pre>/todos/:id</Pre> endpoint by using the DELETE method.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/todos/1
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+ok
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="update-todo">Update a todo</h2>
+
+<Paragraph />
+
+A todo can be updated through the <Pre>/todos/:id</Pre> endpoint by using the PATCH method. The <Pre>id</Pre> of a resource can't be updated.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/todos/1
+```
+
+</Example>
+
+<ExampleTitle>
+
+Example Body
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "title": "quo provident culpa",
+  "completed": true
+}
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "7",
+  "id": "1",
+  "title": "quo provident culpa",
+  "completed": true
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="replace-todo">Replace a todo</h2>
+
+<Paragraph />
+
+A todo can be replaced through the <Pre>/todos/:id</Pre> endpoint by using the PUT method. The <Pre>id</Pre> of a resource can't be updated and all properties must be provided.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/todos/1
+```
+
+</Example>
+
+<ExampleTitle>
+
+Example Body
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "2",
+  "title": "neqmporibus autem",
+  "completed": false
+}
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "2",
+  "id": "1",
+  "title": "neqmporibus autem",
+  "completed": false
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="filter-todos">Filter todos</h2>
+
+<Paragraph />
+
+Using query parameters will allow you to filter todos by their keys.
+
+<Paragraph />
+
+Available parameters:
+
+<Li>userId</Li>
+<Li>id</Li>
+<Li>title</Li>
+<Li>completed</Li>
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/todos?title=veri
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+[
+  {
+    "userId": "7",
+    "id": "13",
+    "title": "veritatis earum et",
+    "completed": true
+  },
+  {
+    "userId": "7",
+    "id": "15",
+    "title": "quod veritatis qui",
+    "completed": false
+  }
+]
+```
+
+</Example>

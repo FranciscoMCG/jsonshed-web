@@ -7,7 +7,24 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-typescript',
-    'gatsby-plugin-anchor-links',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `jsonshed`,
+        short_name: `jsonshed`,
+        start_url: `/`,
+        background_color: `#293145`,
+        theme_color: `#ffc7ec`,
+        display: `standalone`,
+        icon: `src/assets/images/favicon.png`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        offset: -75,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-theme-ui',
     {
@@ -39,7 +56,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: ['Comfortaa', 'Oswald'],
+        fonts: [`Oswald`, `Comfortaa`],
         display: 'swap',
       },
     },

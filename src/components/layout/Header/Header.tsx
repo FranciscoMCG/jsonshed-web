@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { useState } from 'react'
 import { jsx } from 'theme-ui'
-import { AnchorLink as Link } from 'gatsby-plugin-anchor-links'
+import { Link } from 'gatsby'
 
 import { Logo } from '../../graphics'
 import { NavBar } from '../../navigation/Navbar'
@@ -35,7 +35,16 @@ export default function Header() {
           justifySelf: 'center',
         }}
       >
-        <Logo sx={{ variant: 'styles.h3', color: 'primary' }} />
+        <Logo
+          sx={{
+            variant: 'styles.h2',
+            color: 'primary',
+            '&:hover': {
+              color: 'secondary',
+              cursor: 'pointer',
+            },
+          }}
+        />
       </Link>
     </header>
   )

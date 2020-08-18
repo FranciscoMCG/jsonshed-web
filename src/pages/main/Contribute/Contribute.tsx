@@ -4,11 +4,6 @@ import { jsx } from 'theme-ui'
 import { SEO } from '../../../components/config'
 import { Card } from '../../../components/surfaces'
 
-const heading = {
-  variant: 'text.heading',
-  fontSize: [1, 2, 3],
-}
-
 export default function Contribute() {
   return (
     <section
@@ -30,17 +25,17 @@ export default function Contribute() {
           justifyContent: 'space-evenly',
           textAlign: 'center',
           alignItems: 'center',
-          p: 5,
+          p: [5, 6, 7],
         }}
       >
         <div>
           <h2
             sx={{
-              variant: 'text.heading',
+              variant: 'styles.h2',
               fontSize: [3, 3, 4],
             }}
           >
-            # How do I contribute?
+            How do I contribute?
           </h2>
         </div>
         <div>
@@ -59,7 +54,9 @@ export default function Contribute() {
           >
             <div>
               <li>
-                <h3 sx={heading}>STEP 1</h3>
+                <h3 sx={{ variant: 'styles.h3', fontSize: [1, 2, 3] }}>
+                  STEP 1
+                </h3>
                 <ul>
                   <li>
                     Option 1: Fork the repo{' '}
@@ -98,14 +95,30 @@ export default function Contribute() {
             </div>
             <div>
               <li>
-                <h3 sx={heading}>STEP 2</h3>
+                <h3
+                  sx={{
+                    variant: 'styles.h3',
+                    fontSize: [1, 2, 3],
+                    mt: [2, 3, 3],
+                  }}
+                >
+                  STEP 2
+                </h3>
                 Write code you feel is going to add something to the project
               </li>
             </div>
             <div>
               <li>
-                <h3 sx={heading}>STEP 3</h3> Create a new pull request using
-                this{' '}
+                <h3
+                  sx={{
+                    variant: 'styles.h3',
+                    fontSize: [1, 2, 3],
+                    mt: [2, 3, 3],
+                  }}
+                >
+                  STEP 3
+                </h3>{' '}
+                Create a new pull request using this{' '}
                 <a
                   href="https://github.com/FranciscoMCG/jsonshed/compare"
                   target="_blank"

@@ -6,12 +6,11 @@ export default function useViewport() {
   const isSSR = typeof window !== 'undefined'
   const [windowSize, setWindowSize] = useState({
     width: isSSR ? 1200 : isBrowser() && window.innerWidth,
-    height: isSSR ? 800 : isBrowser() && window.innerHeight,
   })
-  const [isMobile, setIsMobile] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
 
   function changeWindowSize() {
-    setWindowSize({ width: window.innerWidth, height: window.innerHeight })
+    setWindowSize({ width: window.innerWidth })
   }
 
   useEffect(() => {

@@ -1,0 +1,397 @@
+import { Example, Paragraph, ExampleTitle, Pre, Li } from '../../../components/mdxComponents'
+
+<h1 id="posts">Posts</h1>
+
+<Paragraph size={6} />
+
+<h2 id="posts-schema">Schema</h2>
+
+<Paragraph />
+
+| Keys          | Types         | Description                                                                     |
+| --------------|:-------------:| -------------------------------------------------------------------------------:|
+| userId        | string        | post id                                                                         |
+| id            | string        | post id                                                                         |
+| title         | string        | post title                                                                      |
+| body          | string        | post body                                                          |
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="get-all-posts">Get all posts</h2>
+
+<Paragraph />
+
+Posts can be requested through the <Pre>/posts</Pre> endpoint by using the GET method
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/posts
+```
+
+</Example>
+
+<Paragraph />
+
+<Example>
+
+```json
+[
+  {
+    "userId": "7",
+    "id": "1",
+    "title": "quo provident culpa",
+    "body": "Corrupti nihil nisi."
+  },
+  {
+      // ...
+  }
+]
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="get-single-post">Get a single post</h2>
+
+<Paragraph />
+
+A single post can be requested through the <Pre>/posts/:id</Pre> endpoint by using the GET method
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/posts/10
+```
+
+</Example>
+
+<Paragraph />
+
+<Example>
+
+```json
+{
+  "userId": "2",
+  "id": "10",
+  "title": "nulla id et",
+  "body": "Corrupti nihil nisi non est quia cumque ut amet quia."
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="create-post">Create a post</h2>
+
+<Paragraph />
+
+A post can be created through the <Pre>/posts</Pre> endpoint by using the POST method. The <Pre>id</Pre> will be auto-generated.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/posts
+```
+
+</Example>
+
+<ExampleTitle>
+
+Example Body
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "2123",
+  "title": "nulla id et",
+  "body": "Corrupti nihil nisi non est."
+}
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "2123",
+  "title": "nulla id et",
+  "body": "Corrupti nihil nisi non est.",
+  "id": "51"
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="delete-post">Delete a post</h2>
+
+<Paragraph />
+
+A post can be deleted through the <Pre>/posts/:id</Pre> endpoint by using the DELETE method.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/posts/1
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+ok
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="update-post">Update a post</h2>
+
+<Paragraph />
+
+A post can be updated through the <Pre>/posts/:id</Pre> endpoint by using the PATCH method. The <Pre>id</Pre> of a resource can't be updated.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/posts/1
+```
+
+</Example>
+
+<ExampleTitle>
+
+Example Body
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "1",
+  "body": "perspiciatis dicta fugit"
+}
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "1",
+  "id": "1",
+  "title": "et deleniti sit",
+  "body": "perspiciatis dicta fugit"
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="replace-post">Replace a post</h2>
+
+<Paragraph />
+
+A post can be replaced through the <Pre>/posts/:id</Pre> endpoint by using the PUT method. The <Pre>id</Pre> of a resource can't be updated and all properties must be provided.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/posts/1
+```
+
+</Example>
+
+<ExampleTitle>
+
+Example Body
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "1",
+  "title": "perspiciatis dicta fugit",
+  "body": "Cumque doloribus non ratione dolore et pariatur et deserunt."
+}
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "userId": "1",
+  "id": "1",
+  "title": "perspiciatis dicta fugit",
+  "body": "Cumque doloribus non ratione dolore et pariatur et deserunt."
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+---
+
+<Paragraph size={6} />
+
+<h2 id="filter-posts">Filter posts</h2>
+
+<Paragraph />
+
+Using query parameters will allow you to filter posts by their keys.
+
+<Paragraph />
+
+Available parameters:
+
+<Li>userId</Li>
+<Li>id</Li>
+<Li>title</Li>
+<Li>body</Li>
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/posts?title=perferendis
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+[
+  {
+    "userId": "7",
+    "id": "12",
+    "title": "perferendis nisi maiores",
+    "body": "Id placeat sint sed mollitia iusto nulla ducimus dolores."
+  }
+]
+```
+
+</Example>

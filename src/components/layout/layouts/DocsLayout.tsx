@@ -43,7 +43,6 @@ export default function DocsLayout({ children }: PropsWithChildren<any>) {
           {children}
         </section>
       </main>
-      {/* <Footer isMobile={isMobile} isDocsLayout={true} sx={{ zIndex: 0 }} /> */}
       <ColorModeButton />
     </div>
   )

@@ -25,6 +25,7 @@ module.exports = {
     'no-debugger': 1,
     'no-undef': 0,
     'no-unused-vars': 'off',
+    'no-constant-condition': 0,
     '@typescript-eslint/no-unused-vars': 1,
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/no-empty-function': 0,

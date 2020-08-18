@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx } from 'theme-ui'
-import { AnchorLink as Link } from 'gatsby-plugin-anchor-links'
+import { Link } from 'gatsby'
 
 interface Props {
   isMobile: boolean

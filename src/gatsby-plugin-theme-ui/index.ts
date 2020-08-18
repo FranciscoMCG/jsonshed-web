@@ -22,23 +22,35 @@ export default {
   },
   colors: {
     text: '#fff',
-    background: '#0b0c10',
-    // primary - brand color for links, buttons, etc. light
-    primary: '#66fcf1',
-    // secondary - brand color for alternative styling. dark
-    secondary: '#2e3047',
-    // highlight - A background color for highlighting text
-    highlight: '#66fcf1',
-    // muted - A faint color for backgrounds, borders, and accents that do not require high contrast with the background color
-    muted: '#c5c6c7',
+    background: '#293145',
+    primary: '#ffc7ec',
+    secondary: '#9c6d8c',
+    highlight: '#ffc7ec',
+    muted: '##ADEDD4',
     modes: {
       light: {
         text: '#000',
         background: '#fff',
         primary: '#9A1750',
-        secondary: '#2E3047',
+        secondary: '#3FB295',
         highlight: '#9A1750',
         muted: '##ADEDD4',
+      },
+      night: {
+        text: '#fff',
+        background: '#293145',
+        primary: '#ffc7ec',
+        secondary: '#9c6d8c',
+        highlight: '#ffc7ec',
+        muted: '##ADEDD4',
+      },
+      dark: {
+        text: '#fff',
+        background: '#0b0c10',
+        primary: '#88f2eb',
+        secondary: '#ff40c2',
+        highlight: '#88f2eb',
+        muted: '#c5c6c7',
       },
     },
   },
@@ -87,7 +99,7 @@ export default {
     },
     footer: {
       width: '100%',
-      color: 'highlight',
+      color: 'primary',
       bg: 'background',
     },
     docsSideNav: {
@@ -96,8 +108,8 @@ export default {
       top: 0,
       bottom: 0,
       width: '12rem',
-      height: '100%',
       mt: 7,
+      mb: 3,
       bg: 'background',
       borderRight: '2px solid',
     },
@@ -106,17 +118,23 @@ export default {
       variant: 'styles.h3',
       mt: 3,
       mb: 1,
+      p: '3px',
       '&:hover': {
+        borderRadius: 2,
+        bg: 'secondary',
         cursor: 'pointer',
-        color: 'highlight',
+        color: 'text',
       },
     },
     docsSideNavBody: {
       textDecoration: 'none',
+      p: '3px',
       variant: 'text.body',
       '&:hover': {
+        borderRadius: 2,
+        bg: 'secondary',
         cursor: 'pointer',
-        color: 'highlight',
+        color: 'text',
       },
     },
   },
@@ -136,6 +154,10 @@ export default {
       borderRadius: 2,
       color: 'background',
       bg: 'primary',
+      '&:hover': {
+        color: 'secondary',
+        cursor: 'pointer',
+      },
     },
     secondary: {
       color: 'background',
@@ -154,7 +176,7 @@ export default {
     primary: {
       bg: 'background',
       p: 3,
-      border: '#2e3047 2px solid',
+      border: '2px solid',
       boxShadow: '10px 10px 0px -5px rgba(46, 48, 71, 1)',
       borderRadius: 2,
     },
@@ -218,7 +240,7 @@ export default {
       },
       '&:hover': {
         color: 'text',
-        bg: 'primary',
+        bg: 'secondary',
       },
     },
     topNav: {
@@ -237,10 +259,10 @@ export default {
       py: 2,
       px: 3,
       '&:hover': {
-        color: 'white',
+        color: 'text',
         borderBottom: '#212933 2px dotted',
         borderRadius: 2,
-        bg: 'highlight',
+        bg: 'secondary',
       },
     },
     root: {
@@ -250,26 +272,32 @@ export default {
     },
     h1: {
       variant: 'text.heading',
+      color: 'primary',
       fontSize: 5,
     },
     h2: {
       variant: 'text.heading',
+      color: 'primary',
       fontSize: 4,
     },
     h3: {
       variant: 'text.heading',
+      color: 'primary',
       fontSize: 3,
     },
     h4: {
       variant: 'text.heading',
+      color: 'primary',
       fontSize: 2,
     },
     h5: {
       variant: 'text.heading',
+      color: 'primary',
       fontSize: 1,
     },
     h6: {
       variant: 'text.heading',
+      color: 'primary',
       fontSize: 0,
     },
     pre: {
@@ -312,6 +340,7 @@ export default {
       fontWeight: 'bold',
       borderBottom: '2px dotted',
       '&:hover': {
+        color: 'secondary',
         cursor: 'pointer',
       },
     },
