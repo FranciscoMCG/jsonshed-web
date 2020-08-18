@@ -40,16 +40,6 @@ const navItems: NavItem[] = [
     variant: 'layout.docsSideNavBody',
   },
   {
-    title: 'update a user',
-    to: '/docs#update-user',
-    variant: 'layout.docsSideNavBody',
-  },
-  {
-    title: 'replace a user',
-    to: '/docs#replace-user',
-    variant: 'layout.docsSideNavBody',
-  },
-  {
     title: 'create a user',
     to: '/docs#create-user',
     variant: 'layout.docsSideNavBody',
@@ -57,6 +47,16 @@ const navItems: NavItem[] = [
   {
     title: 'delete a user',
     to: '/docs#delete-user',
+    variant: 'layout.docsSideNavBody',
+  },
+  {
+    title: 'update a user',
+    to: '/docs#update-user',
+    variant: 'layout.docsSideNavBody',
+  },
+  {
+    title: 'replace a user',
+    to: '/docs#replace-user',
     variant: 'layout.docsSideNavBody',
   },
   {

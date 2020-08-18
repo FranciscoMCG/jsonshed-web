@@ -1,4 +1,4 @@
-import { Example, Paragraph, ExampleTitle, Pre, Li } from './components'
+import { Example, Paragraph, ExampleTitle, Pre, Li } from '../../../components/mdxComponents'
 
 <h1 id="users">Users</h1>
 
@@ -29,7 +29,7 @@ import { Example, Paragraph, ExampleTitle, Pre, Li } from './components'
 
 <Paragraph />
 
-Users can be requested through the <Pre>/users</Pre> endpoint
+Users can be requested through the <Pre>/users</Pre> endpoint by using the GET method
 
 <ExampleTitle>
 
@@ -83,7 +83,7 @@ https://api.jsonshed.com/users
 
 <Paragraph />
 
-A single user can be requested through the <Pre>/users/:id</Pre> endpoint
+A single user can be requested through the <Pre>/users/:id</Pre> endpoint by using the GET method
 
 <ExampleTitle>
 
@@ -117,6 +117,234 @@ https://api.jsonshed.com/users/10
     "country": "Dominica"
   },
   "jobTitle": "Dynamic Accounts Coordinator"
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+<h2 id="create-user">Create a user</h2>
+
+<Paragraph />
+
+A single user can be requested through the <Pre>/users/:id</Pre> endpoint by using the PUT method. The <Pre>id</Pre> of a resource can't be updated and all properties must be provided.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/users/1
+```
+
+</Example>
+
+<ExampleTitle>
+
+Example Body
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "title": "Corporate Communications Architect",
+  "firstName": "Claudia",
+  "lastName": "Murazik",
+  "email": "Arno53@yahoo.com",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/overra/128.jpg",
+  "address": {
+    "street": "Hilll Forks",
+    "city": "West Aylinton",
+    "zipCode": "68999-7839",
+    "country": "Isle of Man"
+  },
+  "jobTitle": "Lead Accountability Specialist"
+}
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "id": "1",
+  "title": "District Usability Facilitator",
+  "firstName": "Al",
+  "lastName": "Roob",
+  "email": "Joy_Stokes43@hotmail.com",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/pcridesagain/128.jpg",
+  "address": {
+    "street": "Purdy Square",
+    "city": "East Terrell",
+    "zipCode": "30728-0414",
+    "country": "Trinidad and Tobago"
+  },
+  "jobTitle": "Legacy Implementation Agent"
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+<h2 id="update-user">Update a user</h2>
+
+<Paragraph />
+
+A single user can be requested through the <Pre>/users/:id</Pre> endpoint by using the PATCH method. The <Pre>id</Pre> of a resource can't be updated.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/users/1
+```
+
+</Example>
+
+<ExampleTitle>
+
+Example Body
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+   "firstName": "Westley",
+   "lastName": "Hintz",
+   "email": "Crystal.Langworth84@gmail.com"
+}
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "id": "1",
+  "title": "Corporate Communications Architect",
+  "firstName": "Westley",
+  "lastName": "Hintz",
+  "email": "Crystal.Langworth84@gmail.com",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/overra/128.jpg",
+  "address": {
+    "street": "Hilll Forks",
+    "city": "West Aylinton",
+    "zipCode": "68999-7839",
+    "country": "Isle of Man"
+  },
+  "jobTitle": "Lead Accountability Specialist"
+}
+```
+
+</Example>
+
+<Paragraph size={6} />
+
+<h2 id="replace-user">Replace a user</h2>
+
+<Paragraph />
+
+A single user can be requested through the <Pre>/users/:id</Pre> endpoint by using the PUT method. The <Pre>id</Pre> of a resource can't be updated and all properties must be provided.
+
+<ExampleTitle>
+
+Example Request
+
+</ExampleTitle>
+
+<Example>
+
+```bash
+https://api.jsonshed.com/users/1
+```
+
+</Example>
+
+<ExampleTitle>
+
+Example Body
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "title": "Corporate Communications Architect",
+  "firstName": "Claudia",
+  "lastName": "Murazik",
+  "email": "Arno53@yahoo.com",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/overra/128.jpg",
+  "address": {
+    "street": "Hilll Forks",
+    "city": "West Aylinton",
+    "zipCode": "68999-7839",
+    "country": "Isle of Man"
+  },
+  "jobTitle": "Lead Accountability Specialist"
+}
+```
+
+</Example>
+
+<Paragraph />
+
+<ExampleTitle>
+
+Return
+
+</ExampleTitle>
+
+<Example>
+
+```json
+{
+  "id": "1",
+  "title": "District Usability Facilitator",
+  "firstName": "Al",
+  "lastName": "Roob",
+  "email": "Joy_Stokes43@hotmail.com",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/pcridesagain/128.jpg",
+  "address": {
+    "street": "Purdy Square",
+    "city": "East Terrell",
+    "zipCode": "30728-0414",
+    "country": "Trinidad and Tobago"
+  },
+  "jobTitle": "Legacy Implementation Agent"
 }
 ```
 
