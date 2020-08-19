@@ -107,12 +107,12 @@ export default function About() {
             </a>
             . It&#39;s hosted on{' '}
             <a
-              href="https://aws.amazon.com/"
+              href="https://firebase.google.com/"
               target="_blank"
               rel="noreferrer"
               sx={{ variant: 'styles.link' }}
             >
-              AWS
+              Firebase
             </a>{' '}
             and the website was built with{' '}
             <a

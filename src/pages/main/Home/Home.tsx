@@ -49,7 +49,7 @@ export default function Home() {
             }}
           >
             a fake REST api for testing and prototyping&#44; built in Node.JS
-            and TypeScript.
+            and TypeScript
           </p>
         </Card>
       </div>
