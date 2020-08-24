@@ -48,7 +48,7 @@ export default function Home() {
               textAlign: 'center',
             }}
           >
-            a fake REST api for testing and prototyping&#44; built in Node.JS
+            a simple REST api for testing and prototyping&#44; built in Node.JS
             and TypeScript
           </p>
         </Card>

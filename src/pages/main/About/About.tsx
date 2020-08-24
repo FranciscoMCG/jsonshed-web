@@ -35,7 +35,7 @@ export default function About() {
               fontSize: [2, 3, 4],
             }}
           >
-            What are we witnessing?
+            What is JSONSHED?
           </h2>
           <p
             sx={{
@@ -45,7 +45,7 @@ export default function About() {
             }}
           >
             JSONSHED is a REST api and it was built to help web developers
-            testing and prototyping
+            testing and prototyping.
           </p>
         </div>
         <div>
@@ -65,8 +65,8 @@ export default function About() {
               mt: [1],
             }}
           >
-            Because I wanted to contribute to the web development open source
-            community
+            Because I want to contribute to the open source web development
+            community.
           </p>
         </div>
         <div>
@@ -77,7 +77,7 @@ export default function About() {
               mt: 3,
             }}
           >
-            How?
+            How did you build it?
           </h2>
           <p
             sx={{
@@ -95,8 +95,7 @@ export default function About() {
             >
               Node.JS
             </a>{' '}
-            using a plain simple JSON file as data which has been generated
-            using{' '}
+            using simple JSON files as data, which has been generated using{' '}
             <a
               href="https://github.com/marak/Faker.js/"
               target="_blank"
@@ -121,7 +120,7 @@ export default function About() {
               rel="noreferrer"
               sx={{ variant: 'styles.link' }}
             >
-              Gatsby
+              Gatsby.
             </a>
           </p>
         </div>
