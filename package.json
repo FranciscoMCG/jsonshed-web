@@ -52,7 +52,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.4.0",
     "prettier": "^2.0.5",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.23.0",
     "react-test-renderer": "^16.13.1",
     "ts-jest": "^26.2.0",
     "typescript": "^3.9.7"
